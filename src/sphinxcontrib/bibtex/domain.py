@@ -16,7 +16,7 @@
 """
 
 import ast
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Union
 from typing import List, Dict, NamedTuple, cast, Iterable, Tuple, Set
 
 import docutils.frontend
@@ -25,6 +25,7 @@ import docutils.parsers.rst
 import docutils.utils
 import pybtex_docutils
 import pybtex.plugin
+from docutils.nodes import Node
 from pybtex.richtext import Tag
 from pybtex.style.template import FieldIsMissing
 from pybtex.style import FormattedEntry
@@ -36,7 +37,6 @@ import re
 from sphinx.domains import Domain, ObjType
 from sphinx.errors import ExtensionError
 from sphinx.locale import _
-from sphinx.util.nodes import make_refnode
 
 from .roles import CiteRole
 from .bibfile import normpath_filename, process_bibdata, BibData
@@ -229,6 +229,26 @@ class SphinxReferenceInfo(NamedTuple):
     todocname: str      #: Document name of the bibliography.
     citation_id: str    #: Unique id of the citation within the bibliography.
     title: str          #: Title attribute for reference node.
+
+
+def make_refnode(builder: "Builder", fromdocname: str, todocname: str,
+                 targetid: str,
+                 child: Union[Node, List[Node]], title: str = None
+                 ) -> docutils.nodes.citation_reference:
+    """Shortcut to create a citation reference node."""
+    node = docutils.nodes.citation_reference('', '', internal=True)
+    if fromdocname == todocname and targetid:
+        node['refid'] = targetid
+    else:
+        if targetid:
+            node['refuri'] = (builder.get_relative_uri(fromdocname, todocname) +
+                              '#' + targetid)
+        else:
+            node['refuri'] = builder.get_relative_uri(fromdocname, todocname)
+    if title:
+        node['reftitle'] = title
+    node += child
+    return node
 
 
 class SphinxReferenceText(BaseReferenceText[SphinxReferenceInfo]):
