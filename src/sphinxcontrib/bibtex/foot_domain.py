@@ -54,12 +54,10 @@ class BibtexFootDomain(Domain):
         self.object_types = dict(
             citation=ObjType(_('citation'), *role_names, searchprio=-1),
         )
-        self.roles = dict((name, FootCiteRole()) for name in role_names)
+        self.roles = {name: FootCiteRole() for name in role_names}
         # initialize the domain
         super().__init__(env)
-        # parse bibliography header
-        header = getattr(env.app.config, "bibtex_footbibliography_header")
-        if header:
+        if header := getattr(env.app.config, "bibtex_footbibliography_header"):
             self.data["bibliography_header"] += \
                 parse_header(header, "foot_bibliography_header")
 

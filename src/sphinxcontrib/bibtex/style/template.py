@@ -183,7 +183,9 @@ class FootReferenceText(BaseReferenceText[FootReferenceInfo]):
         info = self.info[0]
         # see docutils.parsers.rst.states.Body.footnote_reference()
         refnode = docutils.nodes.footnote_reference(
-            '[#%s]_' % info.key, refname=info.refname, auto=1)
+            f'[#{info.key}]_', refname=info.refname, auto=1
+        )
+
         info.document.note_autofootnote_ref(refnode)
         info.document.note_footnote_ref(refnode)
         return [refnode]

@@ -78,10 +78,7 @@ class FootCiteRole(XRefRole):
                 if key not in (foot_old_refs | foot_new_refs):
                     footnote = docutils.nodes.footnote(auto=1)
                     # no automatic ids for footnotes: force non-empty template
-                    template: str = \
-                        env.app.config.bibtex_footcite_id \
-                        if env.app.config.bibtex_footcite_id \
-                        else "footcite-{key}"
+                    template: str = env.app.config.bibtex_footcite_id or "footcite-{key}"
                     raw_id = template.format(
                             footbibliography_count=footbibliography_count + 1,
                             key=entry.key)

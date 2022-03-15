@@ -2,7 +2,7 @@ from sphinxcontrib.bibtex.style.referencing import join, sentence
 
 
 def test_join() -> None:
-    assert str(join.format()) == ""
+    assert not str(join.format())
     assert str(join['a', 'b', 'c', 'd', 'e'].format()) == "abcde"
     join_sep = join(sep=', ', sep2=' and ', last_sep=', and ')
     assert str(join_sep['Tom', 'Jerry'].format()) == "Tom and Jerry"
@@ -14,7 +14,7 @@ def test_join() -> None:
 
 
 def test_sentence() -> None:
-    assert str(sentence.format()) == ""
+    assert not str(sentence.format())
     assert \
         str(sentence(capitalize=True, sep=' ')[
             'mary', 'had', 'a', 'little', 'lamb'].format()) == \
