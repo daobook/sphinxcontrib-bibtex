@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2011-2021, Matthias C. M. Troffaes
+# This file is distributed under the same license as the
+# sphinxcontrib-bibtex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinxcontrib-bibtex 2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-15 16:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../api/roles.rst:2
+msgid "New Roles"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.roles.CitationRef:1
+msgid "Information about a citation reference."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.roles.CitationRef.citation_ref_id:1
+msgid "Unique id of this citation reference."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.roles.CitationRef.docname:1
+msgid "Document name."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.roles.CitationRef.keys:1
+msgid "Citation keys (including key prefix)."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.roles.CitationRef.line:1
+msgid "Line number."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootCiteRole:1
+#: sphinxcontrib.bibtex.roles.CiteRole:1
+msgid "基类：:py:class:`sphinx.roles.XRefRole`"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.roles.CiteRole:1
+msgid "Class for processing the :rst:role:`cite` role."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.roles.CiteRole.result_nodes:1
+msgid ""
+"Associate the pending_xref with the cite domain, and note the cited "
+"citation keys."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootReferenceInfo:1
+msgid ""
+"Tuple containing reference info to enable sphinx to resolve a footnote "
+"reference."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.foot_roles.FootReferenceInfo.document:1
+msgid "Current docutils document."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.foot_roles.FootReferenceInfo.key:1
+msgid "Citation key."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.foot_roles.FootReferenceInfo.refname:1
+msgid "Citation reference name."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootReferenceText:1
+msgid ""
+"Pybtex rich text class for footnote references with the docutils backend,"
+" for use with :class:`FootReferenceInfo`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootReferenceText.render:1
+msgid "Render this :py:class:`Text` into markup."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootReferenceText.render
+msgid "参数"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootReferenceText.render:3
+msgid ""
+"The formatting backend (an instance of "
+":py:class:`pybtex.backends.BaseBackend`)."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootCiteRole:1
+msgid "Class for processing the :rst:role:`footcite` role."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootCiteRole.result_nodes:1
+msgid ""
+"Transform node into footnote references, and add footnotes to a node "
+"stored in the environment's temporary data if they are not yet present."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootCiteRole.result_nodes:7
+msgid ""
+"The node containing all footnotes is inserted into the document by "
+":meth:`.foot_directives.FootBibliographyDirective.run`."
+msgstr ""
+

@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2011-2021, Matthias C. M. Troffaes
+# This file is distributed under the same license as the
+# sphinxcontrib-bibtex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinxcontrib-bibtex 2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-15 16:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../api/pybtex.rst:2
+msgid "Pybtex Extensions"
+msgstr ""
+
+#: ../../api/pybtex.rst:5
+msgid "New Text Elements"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.richtext.BaseReferenceText:1
+msgid ""
+"Generic rich text element for citation references. Instances store some "
+"extra reference info that can be used when formatting. This base class "
+"renders its children without further formatting. Implementations must "
+"create a derivation from this class which overrides the *render* method "
+"to create the desired output. See for instance "
+":class:`~sphinxcontrib.bibtex.domain.SphinxReferenceText`."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.richtext.ReferenceInfo:1
+msgid ""
+"Generic type parameter for types that store reference information. To be "
+"implemented by clients. See for instance "
+":class:`~sphinxcontrib.bibtex.domain.SphinxReferenceInfo`."
+msgstr ""
+
+#: ../../api/pybtex.rst:11
+msgid "New Template Nodes"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.join:1
+msgid "Join text fragments together."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.sentence:1
+msgid ""
+"Join text fragments, capitalize the first letter, and add a period to the"
+" end."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.names:1
+msgid "Return formatted names."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.entry_label:1
+msgid "Node for inserting the label of a formatted entry."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.reference:1
+msgid ""
+"Node for inserting a citation reference. The children of the node "
+"comprise the content of the reference, and any referencing information is"
+" stored in the *reference_info* key of the *data*. The data must also "
+"contain a *style* key pointing to the corresponding "
+":class:`~sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle`."
+msgstr ""
+
+#: ../../api/pybtex.rst:17
+msgid "New Names Styles"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.names.last.LastNameStyle:1
+msgid "A simple name style for formatting the last name of an author."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.names.last.LastNameStyle.format:1
+msgid "Format last names."
+msgstr ""
+

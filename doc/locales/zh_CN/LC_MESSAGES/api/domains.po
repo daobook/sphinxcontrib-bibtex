@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2011-2021, Matthias C. M. Troffaes
+# This file is distributed under the same license as the
+# sphinxcontrib-bibtex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinxcontrib-bibtex 2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-15 16:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../api/domains.rst:2
+msgid "New Domains"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain:1
+msgid ""
+"Classes and methods to maintain any bibtex information that is stored "
+"outside the doctree."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.Citation:1
+msgid "Information about a citation."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.domain.Citation.bibliography_key:1
+msgid "Key of its bibliography directive."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.domain.Citation.citation_id:1
+msgid "Unique id of this citation."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.domain.Citation.entry:1
+msgid "Entry from pybtex."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.domain.Citation.formatted_entry:1
+msgid "Entry as formatted by pybtex."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.domain.Citation.key:1
+msgid "Key (with prefix)."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.SphinxReferenceInfo:1
+msgid ""
+"Tuple containing reference info to enable sphinx to resolve a reference "
+"to a citation."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.domain.SphinxReferenceInfo.builder:1
+msgid "The Sphinx builder."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.domain.SphinxReferenceInfo.citation_id:1
+msgid "Unique id of the citation within the bibliography."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.domain.SphinxReferenceInfo.fromdocname:1
+msgid "Document name of the citation reference."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.domain.SphinxReferenceInfo.title:1
+msgid "Title attribute for reference node."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.domain.SphinxReferenceInfo.todocname:1
+msgid "Document name of the bibliography."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.SphinxReferenceText:1
+msgid ""
+"Pybtex rich text class for citation references with the docutils backend,"
+" for use with :class:`SphinxReferenceInfo`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.SphinxReferenceText.render:1
+msgid "Render this :py:class:`Text` into markup."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.SphinxReferenceText.render
+msgid "参数"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.SphinxReferenceText.render:3
+msgid ""
+"The formatting backend (an instance of "
+":py:class:`pybtex.backends.BaseBackend`)."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain:1
+msgid "Sphinx domain for the bibtex extension."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.bibdata:1
+msgid "Information about the bibliography files."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.bibliographies:1
+msgid "Map storing information about each bibliography directive."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.citation_refs:1
+msgid "Citation reference data."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.citations:1
+msgid "Citation data."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.clear_doc:1
+msgid "Remove traces of a document in the domain-specific inventories."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_all_cited_keys:1
+msgid ""
+"Yield all citation keys for given *docnames* in order, then ordered by "
+"citation order."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_entries:1
+msgid ""
+"Return all bibliography entries from the bib files, unsorted (i.e. in "
+"order of appearance in the bib files."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_filtered_entries:1
+msgid "Return unsorted bibliography entries filtered by the filter expression."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_formatted_entries:1
+msgid ""
+"Get sorted bibliography entries along with their pybtex labels, with "
+"additional sorting and formatting applied from the pybtex style."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_sorted_entries:1
+msgid "Return filtered bibliography entries sorted by citation order."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.merge_domaindata:1
+msgid ""
+"Merge in data regarding *docnames* from a different domaindata inventory "
+"(coming from a subprocess in parallel builds)."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.resolve_any_xref:1
+msgid ""
+"Replace node by list of citation references (one for each key), provided "
+"that the target has citation keys."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.resolve_xref:1
+msgid "Replace node by list of citation references (one for each key)."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain:1
+msgid "Domain for footnote citations."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain:1
+msgid "Sphinx domain for footnote citations."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.merge_domaindata:1
+msgid "Merge in data regarding *docnames* from domain data inventory *otherdata*."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.merge_domaindata:4
+msgid ""
+"As there is no document specific data for this domain, this function does"
+" nothing."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.resolve_any_xref:1
+msgid ""
+"Resolve the pending reference *node* with the given *target*, where the "
+"reference comes from an \"any\" role."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.resolve_any_xref:4
+msgid ""
+"Since citation references are resolved to regular citations, and not to "
+"footnote citations, this implementation simply returns an empty list."
+msgstr ""
+

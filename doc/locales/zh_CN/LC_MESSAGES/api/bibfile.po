@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2011-2021, Matthias C. M. Troffaes
+# This file is distributed under the same license as the
+# sphinxcontrib-bibtex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinxcontrib-bibtex 2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-15 16:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../api/bibfile.rst:2
+msgid "Bib Files"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile:1
+msgid "Classes and methods to work with bib files."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.BibFile:1
+msgid "Contains information about a parsed bib file."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.bibfile.BibFile.keys:1
+msgid "Set of keys for this bib file as ordered dict."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.bibfile.BibFile.mtime:1
+msgid "Modification time of file when last parsed."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.BibData:1
+msgid "Contains information about a collection of bib files."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.bibfile.BibData.bibfiles:1
+msgid "Maps bib filename to information about it."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.bibfile.BibData.data:1
+msgid "Data parsed from all bib files."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.bibfile.BibData.encoding:1
+msgid "Encoding of all bib files."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.normpath_filename:1
+msgid "Return normalised path to *filename* for the given environment *env*."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.parse_bibdata:1
+msgid "Parse *bibfilenames* with given *encoding*, and return parsed data."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.process_bibdata:1
+msgid "Parse *bibfilenames* and store parsed data in *bibdata*."
+msgstr ""
+

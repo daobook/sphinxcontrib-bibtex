@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2011-2021, Matthias C. M. Troffaes
+# This file is distributed under the same license as the
+# sphinxcontrib-bibtex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinxcontrib-bibtex 2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-15 16:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../api/directives.rst:2
+msgid "New Docutils Directives"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyKey:1
+msgid "Unique key for each bibliography directive."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.directives.BibliographyKey.docname:1
+msgid "Name of the document where the bibliography resides."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.directives.BibliographyKey.id_:1
+msgid "The id of the bibliography node in the document."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyValue:1
+msgid "Contains information about a bibliography directive."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.bibfiles:1
+msgid "List of bib files for this directive."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.citation_nodes:1
+msgid "key -> citation node"
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.enumtype:1
+msgid "The sequence type (for enumerated lists)."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.filter_:1
+msgid "Parsed filter expression."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.keyprefix:1
+msgid "String prefix for citation keys."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.directives.BibliographyValue.keys:1
+msgid "Keys listed as content of the directive."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.labelprefix:1
+msgid "String prefix for pybtex generated labels."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.directives.BibliographyValue.line:1
+msgid "Line number of the directive in the document."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.directives.BibliographyValue.list_:1
+msgid "The list type."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.directives.BibliographyValue.start:1
+msgid "The start of the sequence (for enumerated lists)."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.directives.BibliographyValue.style:1
+msgid "The pybtex style."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyDirective:1
+msgid "Class for processing the :rst:dir:`bibliography` directive."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyDirective:3
+msgid ""
+"Produces a :class:`~sphinxcontrib.bibtex.nodes.bibliography` node, along "
+"with (empty) citation nodes that will be formatted later in the *env-"
+"updated* stage, and inserted into the document in a post-transform. We "
+"cannot insert the citation nodes here because we do not yet know which "
+"keys have been cited."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyDirective:12
+msgid ""
+"Further processing of the resulting "
+":class:`~sphinxcontrib.bibtex.nodes.bibliography` node is done by "
+":class:`~sphinxcontrib.bibtex.transforms.BibliographyTransform`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyDirective.run:1
+msgid ""
+"Process .bib files, set file dependencies, and create a node that is to "
+"be transformed to the entries of the bibliography."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_directives.FootBibliographyDirective:1
+msgid "Class for processing the :rst:dir:`footbibliography` directive."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_directives.FootBibliographyDirective.run:1
+msgid ""
+"Set file dependencies, and insert the footnotes that were created earlier"
+" by :meth:`.foot_roles.FootCiteRole.result_nodes`."
+msgstr ""
+

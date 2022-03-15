@@ -1,0 +1,367 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2011-2021, Matthias C. M. Troffaes
+# This file is distributed under the same license as the
+# sphinxcontrib-bibtex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinxcontrib-bibtex 2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-15 16:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../api/referencing.rst:2
+msgid "Referencing Styles"
+msgstr ""
+
+#: ../../api/referencing.rst:5
+msgid "Base Classes For Composing Styles"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle:1
+msgid "Base class for citation reference styles."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle:3
+msgid ""
+"For consistency, all subclasses of this class must be decorated as a "
+":class:`dataclasses.dataclass`, and must provide a type annotation and "
+"default value for all attributes (unless ``init=False`` is used, in which"
+" case they can be initialized in "
+":meth:`~dataclasses.dataclass.__post_init__`). This allows client code to"
+" instantiate any reference style without needing to specify any arguments"
+" through the constructor."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle.inner:1
+msgid "Returns inner template for formatting the references."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle.outer:1
+msgid "Returns outer template for formatting the references."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle.role_names:1
+msgid "Get list of role names supported by this style."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BracketStyle:1
+msgid ""
+"A class which provides brackets, as well as separators and a function to "
+"facilitate formatting of the outer template."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.BracketStyle.last_sep:1
+msgid "Separator for outer template, for last item if three or more items."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.BracketStyle.left:1
+msgid "Left bracket."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BracketStyle.outer:1
+msgid ""
+"Creates an outer template with separators, adding brackets if requested, "
+"and capitalizing the first word if requested."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.BracketStyle.right:1
+msgid "Right bracket."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.style.referencing.BracketStyle.sep:1
+msgid ""
+"Separators used for outer template (i.e. in between references if "
+"multiple keys are referenced in a single citation)."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.BracketStyle.sep2:1
+msgid "Separator for outer template, if only two items."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle:1
+msgid "Composes a group of reference styles into a single consistent style."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.inner:1
+msgid ""
+"Gets the inner template associated with *role_name* in one of the "
+":attr:`styles`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.outer:1
+msgid ""
+"Gets the outer template associated with *role_name* in one of the "
+":attr:`styles`."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.role_style:1
+msgid ""
+"Dictionary from role names to styles. Automatically initialized from "
+":attr:`styles`."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.styles:1
+msgid "List of style types."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.PersonStyle:1
+msgid ""
+"A class providing additional data and helper functions to facilitate "
+"formatting of person names."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.abbreviate:1
+msgid "Whether or not to abbreviate first names."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.author_or_editor_or_title:1
+msgid ""
+"Returns a template formatting the author, falling back on editor or title"
+" if author is not specified."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.last_sep:1
+msgid "Separator between persons, for last person if three or more persons."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.PersonStyle.names:1
+msgid ""
+"Returns a template formatting the persons with correct separators and "
+"using the full person list if so requested."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.other:1
+msgid "Abbreviation text if three or more persons."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.style.referencing.PersonStyle.sep:1
+msgid "Separator between persons."
+msgstr ""
+
+#: ../../docstring of sphinxcontrib.bibtex.style.referencing.PersonStyle.sep2:1
+msgid "Separator between persons, if only two persons."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.style:1
+msgid "Plugin name of the style used for formatting person names."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.style_plugin:1
+msgid ""
+"Plugin class instance used for formatting person names. Automatically "
+"initialised from :attr:`style`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.format_references:1
+msgid "Format the list of references according to the given role."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.format_references:3
+msgid ""
+"First formats each reference using the style's "
+":meth:`~BaseReferenceStyle.get_inner` method, then joins all these "
+"formatted references together using the style's "
+":meth:`~BaseReferenceStyle.get_outer` method."
+msgstr ""
+
+#: ../../api/referencing.rst:11
+msgid "Basic Styles"
+msgstr ""
+
+#: ../../api/referencing.rst:13
+msgid ""
+"Basic styles that support both textual and parenthetical citations. "
+"Should provide roles with names ``p``, ``ps``, ``t``, ``ts``, ``ct``, and"
+" ``cts``. Here, ``t`` stands for textual and ``p`` for parenthetical. The"
+" ``c`` prefix causes the first letter to be capitalized, and the ``s`` "
+"suffix causes all authors to be named rather than shortening the list "
+"using \"et al.\" or some other suffix as specified by the style."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle:1
+msgid "Reference by label if parenthetical, and by author and label if textual."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle.bracket:1
+msgid "Bracket style."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.person:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.person:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.person:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.person:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.person:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.person:1
+msgid "Person style."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.text_reference_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.text_reference_sep:1
+msgid "Separator between text and reference."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle:1
+msgid "Parenthetical reference by author-year."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.author_year_sep:1
+msgid "Separator between author and year."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle:1
+msgid "Textual reference by author-year."
+msgstr ""
+
+#: ../../api/referencing.rst:29
+msgid "Extra Styles"
+msgstr ""
+
+#: ../../api/referencing.rst:31
+msgid ""
+"For styles providing additional roles, e.g. for citations that "
+"specifically use the label, the author, the year, etc. The convention for"
+" these styles is to have one role for producing whichever text needs to "
+"be had, and to have a ``par`` suffix in the role name if the citation "
+"text needs to be embedded in brackets (for example ``label`` and "
+"``labelpar``)."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle:1
+msgid "Reference just by label."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle:1
+msgid "Reference just by author names."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle:1
+msgid "Reference just by year."
+msgstr ""
+
+#: ../../api/referencing.rst:48
+msgid "Full Styles"
+msgstr ""
+
+#: ../../api/referencing.rst:50
+msgid "For styles that combine a basic style with one or more extra styles."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle:1
+msgid ""
+"Textual or parenthetical reference by label, or just by author, label, or"
+" year."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_author:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_author:1
+msgid "Bracket style for author citations (:cite:author: and variations)."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_label:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_label:1
+msgid "Bracket style for label citations (:cite:label: and variations)."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_parenthetical:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_parenthetical:1
+msgid "Bracket style for parenthetical citations (:cite:p: and variations)."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_textual:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_textual:1
+msgid "Bracket style for textual citations (:cite:t: and variations)."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_year:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_year:1
+msgid "Bracket style for year citations (:cite:year: and variations)."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.text_reference_sep:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.text_reference_sep:1
+msgid "Separator between text and reference for textual citations."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle:1
+msgid ""
+"Textual or parenthetical reference by author-year, or just by author, "
+"label, or year."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.author_year_sep:1
+msgid "Separator between author and year for parenthetical citations."
+msgstr ""
+
+#: ../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.person:1
+msgid "Person style (applies to all relevant citation commands)."
+msgstr ""
+
