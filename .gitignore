@@ -12,3 +12,5 @@
 /src/*.egg-info/
 /dist/
 /build/
+*.mo
+output/
