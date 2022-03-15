@@ -69,7 +69,7 @@ def test_debug_minimal_example(app, warning) -> None:
     app.build()
     assert not warning.getvalue()
     output = (app.outdir / "index.pseudoxml").read_text()
-    assert [line for line in output.split('\n')][1:] == [
+    assert list(output.split('\n'))[1:] == [
         '    <paragraph>',
         '        See ',
         '        <inline ids="id1">',

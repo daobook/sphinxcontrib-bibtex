@@ -59,7 +59,7 @@ def _raise_invalid_node(node):
     """Helper method to raise an exception when an invalid node is
     visited.
     """
-    raise ValueError("invalid node %s in filter expression" % node)
+    raise ValueError(f"invalid node {node} in filter expression")
 
 
 class _FilterVisitor(ast.NodeVisitor):
@@ -95,7 +95,7 @@ class _FilterVisitor(ast.NodeVisitor):
         else:  # pragma: no cover
             # there are no other boolean operators
             # so this code should never execute
-            assert False, "unexpected boolean operator %s" % node.op
+            assert False, f"unexpected boolean operator {node.op}"
 
     def visit_UnaryOp(self, node):
         if isinstance(node.op, ast.Not):
@@ -110,11 +110,9 @@ class _FilterVisitor(ast.NodeVisitor):
         if isinstance(op, ast.Mod):
             # modulo operator is used for regular expression matching
             if not isinstance(left, str):
-                raise ValueError(
-                    "expected a string on left side of %s" % node.op)
+                raise ValueError(f"expected a string on left side of {node.op}")
             if not isinstance(right, str):
-                raise ValueError(
-                    "expected a string on right side of %s" % node.op)
+                raise ValueError(f"expected a string on right side of {node.op}")
             return re.search(right, left, re.IGNORECASE)
         elif isinstance(op, ast.BitOr):
             return left | right
@@ -163,7 +161,7 @@ class _FilterVisitor(ast.NodeVisitor):
             return self.docname
         elif id_ == 'docnames':
             return self.cited_docnames
-        elif id_ == 'author' or id_ == 'editor':
+        elif id_ in ['author', 'editor']:
             if id_ in self.entry.persons:
                 return u' and '.join(
                     str(person)  # XXX needs fix in pybtex?
@@ -203,8 +201,7 @@ def get_docnames(env):
         yield docname
         parent, prevdoc, nextdoc = rel[docname]
         docname = nextdoc
-    for docname in sorted(env.found_docs - docnames):
-        yield docname
+    yield from sorted(env.found_docs - docnames)
 
 
 class Citation(NamedTuple):
@@ -287,7 +284,7 @@ class BibtexDomain(Domain):
         self.object_types = dict(
             citation=ObjType(_('citation'), *role_names, searchprio=-1),
         )
-        self.roles = dict((name, CiteRole()) for name in role_names)
+        self.roles = {name: CiteRole() for name in role_names}
         # initialize the domain
         super().__init__(env)
         # connect env-updated
@@ -298,13 +295,13 @@ class BibtexDomain(Domain):
                 "You must configure the bibtex_bibfiles setting")
         # update bib file information in the cache
         bibfiles = [
-            normpath_filename(env, "/" + bibfile)
-            for bibfile in env.app.config.bibtex_bibfiles]
+            normpath_filename(env, f"/{bibfile}")
+            for bibfile in env.app.config.bibtex_bibfiles
+        ]
+
         self.data['bibdata'] = process_bibdata(
             self.bibdata, bibfiles, env.app.config.bibtex_encoding)
-        # parse bibliography header
-        header = getattr(env.app.config, "bibtex_bibliography_header")
-        if header:
+        if header := getattr(env.app.config, "bibtex_bibliography_header"):
             self.data["bibliography_header"] += \
                 parse_header(header, "bibliography_header")
 
@@ -434,8 +431,7 @@ class BibtexDomain(Domain):
         """
         for citation_ref in sorted(
                 self.citation_refs, key=lambda c: docnames.index(c.docname)):
-            for key in citation_ref.keys:
-                yield key
+            yield from citation_ref.keys
 
     def get_entries(
             self, bibfiles: List[str]) -> Iterable["Entry"]:
@@ -468,9 +464,12 @@ class BibtexDomain(Domain):
                 success = visitor.visit(bibliography.filter_)
             except ValueError as err:
                 logger.warning(
-                    "syntax error in :filter: expression; %s" % err,
+                    f"syntax error in :filter: expression; {err}",
                     location=(bibliography_key.docname, bibliography.line),
-                    type="bibtex", subtype="filter_syntax_error")
+                    type="bibtex",
+                    subtype="filter_syntax_error",
+                )
+
                 # recover by falling back to the default
                 success = bool(cited_docnames)
             if success or entry.key in bibliography.keys:
@@ -490,8 +489,7 @@ class BibtexDomain(Domain):
             else:
                 yield key, entry
         # then all remaining keys, in order of bibliography file
-        for key, entry in entries.items():
-            yield key, entry
+        yield from entries.items()
 
     def get_formatted_entries(
             self, bibliography_key: "BibliographyKey", docnames: List[str],

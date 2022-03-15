@@ -32,7 +32,7 @@ def test_autodoc(app, warning) -> None:
     output2 = (app.outdir / "doc_footcite.html").read_text()
     assert len(html_footnote_refs().findall(output2)) == 11
     for title in titles:
-        text = ".*" + title + ".*"
+        text = f".*{title}.*"
         assert len(html_footnotes(text=text).findall(output2)) == 1
         match = html_footnotes(text=text).search(output2)
         assert match

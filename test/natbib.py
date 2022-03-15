@@ -69,11 +69,10 @@ def parse_keys(rawtext) -> Tuple[List[str], str, str]:
                     bo += 1
                 elif c == "]" and bo == bc + 1:
                     bc += 1
+                elif bc == 0:
+                    pre += c
                 else:
-                    if bc == 0:
-                        pre += c
-                    else:
-                        post += c
+                    post += c
             if bc == bo and bc == 1:
                 post = pre
                 pre = u''
@@ -118,7 +117,7 @@ class CitationTransform(object):
         self.global_keys = global_keys
 
     def __repr__(self):
-        return '<%s>' % self.__str__()
+        return f'<{self.__str__()}>'
 
     def __str__(self):
         return ','.join([r.key for r in self.refs])
@@ -130,26 +129,25 @@ class CitationTransform(object):
         if len(authors) == 0:
             author = ''
         elif len(authors) > 2 and not all_authors:
-            author = u'%s et al.' % authors[0].last_names[0]
+            author = f'{authors[0].last_names[0]} et al.'
         elif len(authors) == 1:
             author = authors[0].last_names[0]
         else:
-            author = u"%s and %s" % (
-                u', '.join([a.last_names[0] for a in authors[:-1]]),
-                authors[-1].last_names[0])
+            author = f"{u', '.join([a.last_names[0] for a in authors[:-1]])} and {authors[-1].last_names[0]}"
+
         author = author.replace('{', '')
         author = author.replace('}', '')
         return author
 
     # TODO refactor to reduce complexity, for now ignore C901
-    def cite(self, cmd, refuri, global_keys):  # noqa: C901
+    def cite(self, cmd, refuri, global_keys):    # noqa: C901
         """
         Return a docutils Node consisting of properly formatted citations
         children nodes.
         """
         self.global_keys = global_keys
         bo, bc = self.config['brackets']
-        sep = u'%s ' % self.config['separator']
+        sep = f"{self.config['separator']} "
         style = self.config['style']
         all_auths = (cmd.endswith('s'))
 
@@ -159,22 +157,23 @@ class CitationTransform(object):
             node = nodes.inline('', '', classes=['citation'])
 
         if self.pre:
-            pre = u"%s " % self.pre
+            pre = f"{self.pre} "
             node += nodes.inline(pre, pre, classes=['pre'])
 
         for i, ref in enumerate(self.refs):
             authors = ref.persons.get('author', [])
             author_text = self.get_author(authors, all_auths)
-            lrefuri = refuri + '#citation-' + nodes.make_id(ref.key)
+            lrefuri = f'{refuri}#citation-{nodes.make_id(ref.key)}'
 
             if 0 < i < len(self.refs):
                 if style == "authoryear":
                     node += nodes.inline(sep, sep)
                 else:
-                    if style == "super":
-                        node += nodes.superscript(', ', ', ')
-                    else:
-                        node += nodes.inline(', ', ', ')
+                    node += (
+                        nodes.superscript(', ', ', ')
+                        if style == "super"
+                        else nodes.inline(', ', ', ')
+                    )
 
             if cmd == 'title':
                 title = ref.fields.get('title')
@@ -195,11 +194,7 @@ class CitationTransform(object):
                     node += nodes.inline(' ', ' ')
 
             # Add in either the year or the citation number
-            if cmd == 'title':
-                pass
-            elif cmd.startswith('author'):
-                pass
-            else:
+            if cmd != 'title' and (cmd == 'title' or not cmd.startswith('author')):
                 if style != 'authoryear':
                     num = self.get_ref_num(ref.key)
                 else:
@@ -211,16 +206,12 @@ class CitationTransform(object):
                 if cmd.startswith('t') and style != 'super':
                     node += nodes.inline(bo, bo)
 
-                if style == 'super':
-                    node += nodes.superscript('', '', refnode)
-                else:
-                    node += refnode
-
+                node += nodes.superscript('', '', refnode) if style == 'super' else refnode
                 if cmd.startswith('t') and style != 'super':
                     node += nodes.inline(bc, bc)
 
         if self.post:
-            post = u", %s" % self.post
+            post = f", {self.post}"
             node += nodes.inline(post, post, classes=['post'])
 
         if (cmd.startswith('p') or cmd == 'yearpar') and style != 'super':
@@ -234,7 +225,7 @@ def sort_references(refs, citations):
         # sort by author last names, but if no author, sort by title
         citation = citations.get(key)
         authorsort = u''.join(map(str, citation.persons.get('author', '')))
-        if len(authorsort) > 0:
+        if authorsort != '':
             authorsort = authorsort.replace('{', '')
             authorsort = authorsort.replace('}', '')
             return authorsort.upper()
@@ -260,12 +251,13 @@ class CitationXRefRole(XRefRole):
         domain = cast(CitationDomain, env.get_domain('cite'))
 
         # Get the config at this point in the document
-        config = {}
-        for opt in ['style', 'brackets', 'separator', 'sort', 'sort_compress']:
-            config[opt] = env.temp_data.get(
-                "cite_%s" % opt,
-                env.domaindata['cite']['conf'].get(
-                    opt, DEFAULT_CONF[opt]))
+        config = {
+            opt: env.temp_data.get(
+                f"cite_{opt}",
+                env.domaindata['cite']['conf'].get(opt, DEFAULT_CONF[opt]),
+            )
+            for opt in ['style', 'brackets', 'separator', 'sort', 'sort_compress']
+        }
 
         if self.name == "cite:text":
             # A ``text`` citation is unique because it doesn't reference a
@@ -277,8 +269,10 @@ class CitationXRefRole(XRefRole):
             for key in keys:
                 if domain.citations.get(key) is None:
                     logger.warning(
-                        "cite-key `%s` not found in bibtex file" % key,
-                        location=(env.docname, self.lineno))
+                        f"cite-key `{key}` not found in bibtex file",
+                        location=(env.docname, self.lineno),
+                    )
+
                     continue
                 env.domaindata['cite']['keys'][key] = None
                 env.domaindata['cite']['keys'] = sort_references(
@@ -328,7 +322,7 @@ class CitationConfDirective(Directive):
             pass
 
         for k, v in self.options.items():
-            env.temp_data['cite_%s' % k] = v
+            env.temp_data[f'cite_{k}'] = v
 
         return []
 
@@ -370,7 +364,7 @@ class CitationReferencesDirective(Directive):
             if i + 1 < len(authors):
                 node += nodes.inline(', ', ', ')
             else:
-                ending = '%s  ' % ('' if text.endswith('.') else '.')
+                ending = f"{'' if text.endswith('.') else '.'}  "
                 node += nodes.inline(ending, ending)
 
         # Title
@@ -386,7 +380,7 @@ class CitationReferencesDirective(Directive):
         # @phdthesis
         if ref.type == 'phdthesis':
             school = ref.fields.get('school')
-            text = 'PhD Thesis, %s, ' % school
+            text = f'PhD Thesis, {school}, '
             node += nodes.inline(text, text)
 
         # Publication
@@ -440,7 +434,7 @@ class CitationReferencesDirective(Directive):
         tbody = nodes.tbody('')
         for i, key in enumerate(keys):
             row = nodes.row('')
-            nid = "citation-%s" % nodes.make_id(key)
+            nid = f"citation-{nodes.make_id(key)}"
             row['classes'].append('footnote')
             row['ids'].append(nid)
             row['names'].append(nid)
@@ -498,15 +492,14 @@ class CitationDomain(Domain):
     def resolve_xref(self, env, fromdocname, builder,
                      typ, target, node, contnode):
 
-        refdoc = self.data['refdoc']
-        if not refdoc:
+        if refdoc := self.data['refdoc']:
+            refuri = builder.get_relative_uri(fromdocname, refdoc)
+
+        else:
             logger.warning(
                 'no `refs` directive found; citations will have dead links',
                 location=node)
             refuri = ''
-        else:
-            refuri = builder.get_relative_uri(fromdocname, refdoc)
-
         for nd in node.children:
             if isinstance(nd, nodes.pending):
                 nd.details['refs'] = []
