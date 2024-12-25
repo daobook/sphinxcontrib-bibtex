@@ -1,0 +1,1028 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2011-2024, Matthias C. M. Troffaes
+# This file is distributed under the same license as the
+# sphinxcontrib-bibtex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sphinxcontrib-bibtex 2.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-25 14:05+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../api.rst:2
+msgid "Extension API"
+msgstr ""
+
+#: ../../api/bibfile.rst:2
+msgid "Bib Files"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile:1
+msgid "Classes and methods to work with bib files."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.BibFile:1
+msgid "Contains information about a parsed bib file."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.bibfile.BibFile.keys:1
+msgid "Set of keys for this bib file as ordered dict."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.bibfile.BibFile.mtime:1
+msgid "Modification time of file when last parsed."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.BibData:1
+msgid "Contains information about a collection of bib files."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.bibfile.BibData.bibfiles:1
+msgid "Maps bib filename to information about it."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.bibfile.BibData.data:1
+msgid "Data parsed from all bib files."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.bibfile.BibData.encoding:1
+msgid "Encoding of all bib files."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.normpath_filename:1
+msgid "Return normalised path to *filename* for the given environment *env*."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.parse_bibdata:1
+msgid "Parse *bibfilenames* with given *encoding*, and return parsed data."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.bibfile.process_bibdata:1
+msgid "Parse *bibfilenames* and store parsed data in *bibdata*."
+msgstr ""
+
+#: ../../api/directives.rst:2
+msgid "New Docutils Directives"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyKey:1
+msgid "Unique key for each bibliography directive."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyKey.docname:1
+msgid "Name of the document where the bibliography resides."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.directives.BibliographyKey.id_:1
+msgid "The id of the bibliography node in the document."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyValue:1
+msgid "Contains information about a bibliography directive."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.bibfiles:1
+msgid "List of bib files for this directive."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.citation_nodes:1
+msgid "key -> citation node"
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.enumtype:1
+msgid "The sequence type (for enumerated lists)."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.filter_:1
+msgid "Parsed filter expression."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.keyprefix:1
+msgid "String prefix for citation keys."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.keys:1
+msgid "Keys listed as content of the directive."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.labelprefix:1
+msgid "String prefix for pybtex generated labels."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.line:1
+msgid "Line number of the directive in the document."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.list_:1
+msgid "The list type."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.start:1
+msgid "The start of the sequence (for enumerated lists)."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.directives.BibliographyValue.style:1
+msgid "The pybtex style."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyDirective:1
+msgid "Class for processing the :rst:dir:`bibliography` directive."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyDirective:3
+msgid ""
+"Produces a :class:`~sphinxcontrib.bibtex.nodes.bibliography` node, along "
+"with (empty) citation nodes that will be formatted later in the *env-"
+"updated* stage, and inserted into the document in a post-transform. We "
+"cannot insert the citation nodes here because we do not yet know which "
+"keys have been cited."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyDirective:12
+msgid ""
+"Further processing of the resulting "
+":class:`~sphinxcontrib.bibtex.nodes.bibliography` node is done by "
+":class:`~sphinxcontrib.bibtex.transforms.BibliographyTransform`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.directives.BibliographyDirective.run:1
+msgid ""
+"Process .bib files, set file dependencies, and create a node that is to "
+"be transformed to the entries of the bibliography."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_directives.FootBibliographyDirective:1
+msgid "Class for processing the :rst:dir:`footbibliography` directive."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_directives.FootBibliographyDirective.run:1
+msgid ""
+"Set file dependencies, and insert the footnotes that were created earlier"
+" by :meth:`.foot_roles.FootCiteRole.result_nodes`."
+msgstr ""
+
+#: ../../api/domains.rst:2
+msgid "New Domains"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain:1
+msgid ""
+"Classes and methods to maintain any bibtex information that is stored "
+"outside the doctree."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.Citation:1
+msgid "Information about a citation."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.domain.Citation.bibliography_key:1
+msgid "Key of its bibliography directive."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.domain.Citation.citation_id:1
+msgid "Unique id of this citation."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.domain.Citation.entry:1
+msgid "Entry from pybtex."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.domain.Citation.formatted_entry:1
+msgid "Formatted entry for bibliography."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.domain.Citation.key:1
+msgid "Key (with prefix)."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.domain.Citation.tooltip_entry:1
+msgid "Formatted entry for tooltip."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain:1
+msgid "Sphinx domain for the bibtex extension."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.bibdata:1
+msgid "Information about the bibliography files."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.bibliographies:1
+msgid "Map storing information about each bibliography directive."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.citation_refs:1
+msgid "Citation reference data."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.citations:1
+msgid "Citation data."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.clear_doc:1
+msgid "Remove traces of a document in the domain-specific inventories."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.domain.BibtexDomain.data_version:1
+#: sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.data_version:1
+msgid "data version, bump this when the format of `self.data` changes"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_all_cited_keys:1
+msgid ""
+"Yield all citation keys for given *docnames* in order, then ordered by "
+"citation order."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_entries:1
+msgid ""
+"Return all bibliography entries from the bib files, unsorted (i.e. in "
+"order of appearance in the bib files."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_filtered_entries:1
+msgid "Return unsorted bibliography entries filtered by the filter expression."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_formatted_entries:1
+msgid ""
+"Get sorted bibliography entries along with their pybtex labels, with "
+"additional sorting and formatting applied from the pybtex style."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.get_sorted_entries:1
+msgid "Return filtered bibliography entries sorted by citation order."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.domain.BibtexDomain.initial_data:1
+#: sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.initial_data:1
+msgid "data value for a fresh environment"
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.domain.BibtexDomain.label:1
+#: sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.label:1
+msgid "domain label: longer, more descriptive (used in messages)"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.merge_domaindata:1
+msgid ""
+"Merge in data regarding *docnames* from a different domaindata inventory "
+"(coming from a subprocess in parallel builds)."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.domain.BibtexDomain.name:1
+#: sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.name:1
+msgid "domain name: should be short, but unique"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.resolve_any_xref:1
+msgid ""
+"Replace node by list of citation references (one for each key), provided "
+"that the target has citation keys."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.domain.BibtexDomain.resolve_xref:1
+msgid "Replace node by list of citation references (one for each key)."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain:1
+msgid "Domain for footnote citations."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain:1
+msgid "Sphinx domain for footnote citations."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.merge_domaindata:1
+msgid "Merge in data regarding *docnames* from domain data inventory *otherdata*."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.merge_domaindata:4
+msgid ""
+"As there is no document specific data for this domain, this function does"
+" nothing."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.resolve_any_xref:1
+msgid ""
+"Resolve the pending reference *node* with the given *target*, where the "
+"reference comes from an \"any\" role."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_domain.BibtexFootDomain.resolve_any_xref:4
+msgid ""
+"Since citation references are resolved to regular citations, and not to "
+"footnote citations, this implementation simply returns an empty list."
+msgstr ""
+
+#: ../../api/interface.rst:2
+msgid "Sphinx Interface"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.setup:1
+msgid "Set up the bibtex extension:"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.setup:3
+msgid "register config values"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.setup:4
+msgid "register directives"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.setup:5
+msgid "register nodes"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.setup:6
+msgid "register roles"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.setup:7
+msgid "register transforms"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.setup:8
+msgid "connect events to functions"
+msgstr ""
+
+#: ../../api/nodes.rst:2
+msgid "New Docutils Nodes"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.nodes.bibliography:1
+msgid ""
+"Node for representing a bibliography. Replaced by a list of citations by "
+":class:`~sphinxcontrib.bibtex.transforms.BibliographyTransform`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.nodes.raw_latex:1
+msgid "Node for representing raw latex data."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.nodes.visit_raw_latex:1
+msgid ""
+"Called when entering a raw_latex node. Appends the node's raw source to "
+"the latex body."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.nodes.depart_raw_latex:1
+msgid "Called when leaving a raw_latex node."
+msgstr ""
+
+#: ../../api/plugin.rst:2
+msgid "Plugins"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.plugin.find_plugin:1
+msgid ""
+"Load a sphinxcontrib-bibtex plugin, either from the runtime store, or "
+"from the entry points."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.plugin.register_plugin:1
+msgid "Register a sphinxcontrib-bibtex plugin into the runtime store."
+msgstr ""
+
+#: ../../api/pybtex.rst:2
+msgid "Pybtex Extensions"
+msgstr ""
+
+#: ../../api/pybtex.rst:5
+msgid "New Text Elements"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.richtext.BaseReferenceText:1
+msgid ""
+"Generic rich text element for citation references. Instances store some "
+"extra reference info that can be used when formatting. This base class "
+"renders its children without further formatting. Implementations must "
+"create a derivation from this class which overrides the *render* method "
+"to create the desired output. See for instance "
+":class:`~sphinxcontrib.bibtex.domain.SphinxReferenceText`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.richtext.ReferenceInfo:1
+msgid ""
+"Generic type parameter for types that store reference information. To be "
+"implemented by clients. See for instance "
+":class:`~sphinxcontrib.bibtex.domain.SphinxReferenceInfo`."
+msgstr ""
+
+#: ../../api/pybtex.rst:11
+msgid "New Template Nodes"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.join:1
+msgid "Join text fragments together."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.sentence:1
+msgid ""
+"Join text fragments, capitalize the first letter, and add a period to the"
+" end."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.names:1
+msgid "Return formatted names."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.entry_label:1
+msgid "Node for inserting the label of a formatted entry."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.reference:1
+msgid ""
+"Pybtex node for inserting a docutils reference node to a citation. The "
+"children of the node comprise the content of the reference, and any "
+"referencing information is stored in the *reference_info* key of the "
+"*data*. The data must also contain a *style* key pointing to the "
+"corresponding "
+":class:`~sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.footnote_reference:1
+msgid ""
+"Pybtex node for inserting a footnote_reference docutils node. Any "
+"referencing information is stored in the *reference_info* key of the "
+"*data*. The data must also contain a *style* key pointing to the "
+"corresponding "
+":class:`~sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.FootReferenceInfo:1
+msgid ""
+"Tuple containing reference info to enable sphinx to resolve a footnote "
+"reference."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.FootReferenceInfo.document:1
+msgid "Current docutils document."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.FootReferenceInfo.key:1
+msgid "Citation key."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.FootReferenceInfo.refname:1
+msgid "Citation reference name."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.FootReferenceText:1
+msgid ""
+"Pybtex rich text class generating a docutils footnote_reference node to a"
+" citation for use with :class:`FootReferenceInfo`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.FootReferenceText.render:1
+#: sphinxcontrib.bibtex.style.template.SphinxReferenceText.render:1
+msgid "Render this :py:class:`Text` into markup."
+msgstr ""
+
+#: ../../api/pybtex.rst
+msgid "参数"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.FootReferenceText.render:3
+#: sphinxcontrib.bibtex.style.template.SphinxReferenceText.render:3
+msgid ""
+"The formatting backend (an instance of "
+":py:class:`pybtex.backends.BaseBackend`)."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.SphinxReferenceInfo:1
+msgid ""
+"Tuple containing reference info to enable sphinx to resolve a reference "
+"to a citation."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.SphinxReferenceInfo.builder:1
+msgid "The Sphinx builder."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.SphinxReferenceInfo.citation_id:1
+msgid "Unique id of the citation within the bibliography."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.SphinxReferenceInfo.fromdocname:1
+msgid "Document name of the citation reference."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.SphinxReferenceInfo.post_text:1
+msgid "Text to come after citation."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.SphinxReferenceInfo.pre_text:1
+msgid "Text to come before citation."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.SphinxReferenceInfo.title:1
+msgid "Title attribute for reference node."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.template.SphinxReferenceInfo.todocname:1
+msgid "Document name of the bibliography."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.template.SphinxReferenceText:1
+msgid ""
+"Pybtex rich text class generating a docutils reference node to a citation"
+" for use with :class:`SphinxReferenceInfo`."
+msgstr ""
+
+#: ../../api/pybtex.rst:17
+msgid "New Names Styles"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.names.last.LastNameStyle:1
+msgid "A simple name style for formatting the last name of an author."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.names.last.LastNameStyle.format:1
+msgid "Format last names."
+msgstr ""
+
+#: ../../api/referencing.rst:2
+msgid "Referencing Styles"
+msgstr ""
+
+#: ../../api/referencing.rst:5
+msgid "Base Classes For Composing Styles"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle:1
+msgid "Base class for citation reference styles."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle:3
+msgid ""
+"For consistency, all subclasses of this class must be decorated as a "
+":class:`dataclass`, and must provide a type annotation and default value "
+"for all attributes (unless ``init=False`` is used, in which case they can"
+" be initialized in :meth:`~dataclass.__post_init__`). This allows client "
+"code to instantiate any reference style without needing to specify any "
+"arguments through the constructor."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle.inner:1
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle.inner:1
+msgid "Returns inner template for formatting the references."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle.outer:1
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle.outer:1
+msgid "Returns outer template for formatting the references."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle.role_names:1
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle.role_names:1
+msgid "Get list of role names supported by this style."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BracketStyle:1
+msgid ""
+"A class which provides brackets, as well as separators and a function to "
+"facilitate formatting of the outer template."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.BracketStyle.last_sep:1
+msgid "Separator for outer template, for last item if three or more items."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.BracketStyle.left:1
+msgid "Left bracket."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.BracketStyle.outer:1
+msgid ""
+"Creates an outer template with separators, adding brackets if requested, "
+"and capitalizing the first word if requested."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.BracketStyle.right:1
+msgid "Right bracket."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.BracketStyle.sep:1
+msgid ""
+"Separators used for outer template (i.e. in between references if "
+"multiple keys are referenced in a single citation)."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.BracketStyle.sep2:1
+msgid "Separator for outer template, if only two items."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle:1
+msgid "Composes a group of reference styles into a single consistent style."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.inner:1
+msgid ""
+"Gets the inner template associated with *role_name* in one of the "
+":attr:`styles`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.outer:1
+msgid ""
+"Gets the outer template associated with *role_name* in one of the "
+":attr:`styles`."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.role_style:1
+msgid ""
+"Dictionary from role names to styles. Automatically initialized from "
+":attr:`styles`."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.GroupReferenceStyle.styles:1
+msgid "List of style types."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.PersonStyle:1
+msgid ""
+"A class providing additional data and helper functions to facilitate "
+"formatting of person names."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.abbreviate:1
+msgid "Whether or not to abbreviate first names."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.author_or_editor_or_title:1
+msgid ""
+"Returns a template formatting the author, falling back on editor or title"
+" if author is not specified."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.last_sep:1
+msgid "Separator between persons, for last person if three or more persons."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.PersonStyle.names:1
+msgid ""
+"Returns a template formatting the persons with correct separators and "
+"using the full person list if so requested."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.other:1
+msgid "Abbreviation text if three or more persons."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.sep:1
+msgid "Separator between persons."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.sep2:1
+msgid "Separator between persons, if only two persons."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.style:1
+msgid "Plugin name of the style used for formatting person names."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.PersonStyle.style_plugin:1
+msgid ""
+"Plugin class instance used for formatting person names. Automatically "
+"initialised from :attr:`style`."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.format_references:1
+msgid "Format the list of references according to the given role."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.format_references:3
+msgid ""
+"First formats each reference using the style's "
+":meth:`~BaseReferenceStyle.inner` method, then joins all these formatted "
+"references together using the style's :meth:`~BaseReferenceStyle.outer` "
+"method."
+msgstr ""
+
+#: ../../api/referencing.rst:11
+msgid "Basic Styles"
+msgstr ""
+
+#: ../../api/referencing.rst:13
+msgid ""
+"Basic styles that support both textual and parenthetical citations. "
+"Should provide roles with names ``p``, ``ps``, ``t``, ``ts``, ``ct``, and"
+" ``cts``. Here, ``t`` stands for textual and ``p`` for parenthetical. The"
+" ``c`` prefix causes the first letter to be capitalized, and the ``s`` "
+"suffix causes all authors to be named rather than shortening the list "
+"using \"et al.\" or some other suffix as specified by the style."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle:1
+msgid "Reference by label if parenthetical, and by author and label if textual."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle.bracket:1
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle.bracket:1
+msgid "Bracket style."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.post_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.post_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.post_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.post_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.post_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.post_text_sep:1
+msgid "Separator between citation and post-text."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.pre_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.pre_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.pre_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelParentheticalReferenceStyle.pre_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.pre_text_sep:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.pre_text_sep:1
+msgid "Separator between pre-text and citation."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.person:1
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.person:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.person:1
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle.person:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.person:1
+msgid "Person style."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle.text_reference_sep:1
+#: sphinxcontrib.bibtex.style.referencing.basic_label.BasicLabelTextualReferenceStyle.text_reference_sep:1
+msgid "Separator between text and reference."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle:1
+msgid "Parenthetical reference by author-year."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearParentheticalReferenceStyle.author_year_sep:1
+msgid "Separator between author and year."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.basic_author_year.BasicAuthorYearTextualReferenceStyle:1
+msgid "Textual reference by author-year."
+msgstr ""
+
+#: ../../api/referencing.rst:29
+msgid "Extra Styles"
+msgstr ""
+
+#: ../../api/referencing.rst:31
+msgid ""
+"For styles providing additional roles, e.g. for citations that "
+"specifically use the label, the author, the year, etc. The convention for"
+" these styles is to have one role for producing whichever text needs to "
+"be had, and to have a ``par`` suffix in the role name if the citation "
+"text needs to be embedded in brackets (for example ``label`` and "
+"``labelpar``)."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.extra_label.ExtraLabelReferenceStyle:1
+msgid "Reference just by label."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.extra_author.ExtraAuthorReferenceStyle:1
+msgid "Reference just by author names."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.extra_year.ExtraYearReferenceStyle:1
+msgid "Reference just by year."
+msgstr ""
+
+#: ../../api/referencing.rst:48
+msgid "Full Styles"
+msgstr ""
+
+#: ../../api/referencing.rst:50
+msgid "For styles that combine a basic style with one or more extra styles."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle:1
+msgid ""
+"Textual or parenthetical reference by label, or just by author, label, or"
+" year."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_author:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_author:1
+msgid "Bracket style for author citations (:cite:author: and variations)."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_label:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_label:1
+msgid "Bracket style for label citations (:cite:label: and variations)."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_parenthetical:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_parenthetical:1
+msgid "Bracket style for parenthetical citations (:cite:p: and variations)."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_textual:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_textual:1
+msgid "Bracket style for textual citations (:cite:t: and variations)."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.bracket_year:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.bracket_year:1
+msgid "Bracket style for year citations (:cite:year: and variations)."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.text_reference_sep:1
+#: sphinxcontrib.bibtex.style.referencing.label.LabelReferenceStyle.text_reference_sep:1
+msgid "Separator between text and reference for textual citations."
+msgstr ""
+
+#: of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle:1
+msgid ""
+"Textual or parenthetical reference by author-year, or just by author, "
+"label, or year."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.author_year_sep:1
+msgid "Separator between author and year for parenthetical citations."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.style.referencing.author_year.AuthorYearReferenceStyle.person:1
+msgid "Person style (applies to all relevant citation commands)."
+msgstr ""
+
+#: ../../api/roles.rst:2
+msgid "New Roles"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.roles.CitationRef:1
+msgid "Information about a citation reference."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.roles.CitationRef.citation_ref_id:1
+msgid "Unique id of this citation reference."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.roles.CitationRef.docname:1
+msgid "Document name."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.roles.CitationRef.line:1
+msgid "Line number."
+msgstr ""
+
+#: ../../../docstring of sphinxcontrib.bibtex.roles.CitationRef.targets:1
+msgid "Citation targets (key, pre, post)."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootCiteRole:1
+#: sphinxcontrib.bibtex.roles.CiteRole:1
+msgid "基类：:py:class:`~sphinx.roles.XRefRole`"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.roles.CiteRole:1
+msgid "Class for processing the :rst:role:`cite` role."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.roles.CiteRole.result_nodes:1
+msgid ""
+"Associate the pending_xref with the cite domain, and note the cited "
+"citation keys."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootCiteRole:1
+msgid "Class for processing the :rst:role:`footcite` role."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootCiteRole.result_nodes:1
+msgid ""
+"Transform node into footnote references, and add footnotes to a node "
+"stored in the environment's temporary data if they are not yet present."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.foot_roles.FootCiteRole.result_nodes:7
+msgid ""
+"The node containing all footnotes is inserted into the document by "
+":meth:`.foot_directives.FootBibliographyDirective.run`."
+msgstr ""
+
+#: ../../api/transforms.rst:2
+msgid "New Transforms"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.transforms.BibliographyTransform:1
+msgid "基类：:py:class:`~sphinx.transforms.post_transforms.SphinxPostTransform`"
+msgstr ""
+
+#: of sphinxcontrib.bibtex.transforms.BibliographyTransform:1
+msgid "A docutils transform to generate citation entries for bibliography nodes."
+msgstr ""
+
+#: ../../../docstring of
+#: sphinxcontrib.bibtex.transforms.BibliographyTransform.default_priority:1
+msgid "Numerical priority of this transform, 0 through 999 (override)."
+msgstr ""
+
+#: of sphinxcontrib.bibtex.transforms.BibliographyTransform.run:1
+msgid ""
+"Transform each :class:`~sphinxcontrib.bibtex.nodes.bibliography` node "
+"into a list of citations."
+msgstr ""
+
