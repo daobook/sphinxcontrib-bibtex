@@ -19,15 +19,15 @@ msgstr ""
 
 #: ../../usage.rst:2
 msgid "Usage"
-msgstr ""
+msgstr "用法"
 
 #: ../../usage.rst:5
 msgid "Configuration"
-msgstr ""
+msgstr "配置"
 
 #: ../../usage.rst:8
 msgid "Bibliography Files and Encoding"
-msgstr ""
+msgstr "参考文献文件和编码"
 
 #: ../../usage.rst:12
 msgid ""
@@ -35,6 +35,8 @@ msgid ""
 "``bibtex_bibfiles`` to your list of bib files. For instance, a minimal "
 "configuration may look as follows:"
 msgstr ""
+"要配置插件，请在您的 ``conf.py`` 文件中，将 ``bibtex_bibfiles`` 设置为您的参考文献文件列表。"
+"例如，最小的配置可能如下所示："
 
 #: ../../usage.rst:21
 msgid ""
@@ -42,6 +44,8 @@ msgid ""
 "unicode characters (for instance, to convert ``\\'e`` into ``é``). Be "
 "sure to write ``\\%`` when you intend to format a percent sign."
 msgstr ""
+"在参考文献文件中，LaTeX 控制字符会自动转换为 Unicode 字符（例如，将``\\'e``转换为 ``é`` ）。"
+"请确保在需要格式化百分号时写入 ``\\%``。"
 
 #: ../../usage.rst:25
 msgid ""

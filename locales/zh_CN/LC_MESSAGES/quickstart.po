@@ -91,7 +91,7 @@ msgid ""
 "bibtex/tree/develop/test/roots/test-debug_minimal_example>`_:"
 msgstr ""
 "在您的项目文档中，您可以使用 ``:cite:t:`` 引用文本引用，使用 ``:cite:p:`` 引用脚注引用，"
-"并使用 ``.. bibliography::`` 插入参考文献。示例 `example "
+"并使用 ``.. bibliography::`` 插入参考文献。`示例 "
 "<https://github.com/mcmtroffaes/sphinxcontrib-"
 "bibtex/tree/develop/test/roots/test-debug_minimal_example>`_ ："
 
@@ -108,6 +108,7 @@ msgid ""
 "See Nelson [Nel87a]_ for an introduction to non-standard analysis. Non-"
 "standard analysis is fun [Nel87a]_."
 msgstr ""
+"关于非标准分析的介绍，请参见 Nelson 的著作 [Nel87a]_。非标准分析非常有趣 [Nel87a]_。"
 
 #: ../../../README.rst:85 ../../../README.rst:110
 msgid ""
@@ -124,6 +125,9 @@ msgid ""
 "supported, but some care needs to be taken from your end to avoid "
 "duplicate citations."
 msgstr ""
+"在 Sphinx 中，引用是在所有文档中全局解析的。" 
+"通常情况下，您会在整个项目中使用单一的 ``bibliography`` 指令来收集所有引用。"
+"虽然也支持在项目中使用多个 ``bibliography`` 指令的高级用例，但您需要注意避免重复引用。"
 
 #: ../../../README.rst:94
 msgid ""
@@ -131,10 +135,11 @@ msgid ""
 "achieve local bibliographies per document, you can use citations "
 "represented by footnotes as follows:"
 msgstr ""
+"与 Sphinx 不同，脚注是每篇文档本地解析的。要实现每篇文档本地的参考文献列表，您可以使用如下方式表示引用："
 
 #: ../../../README.rst:105
 msgid "which will get rendered as:"
-msgstr ""
+msgstr "这将呈现为："
 
 #: ../../../README.rst:107
 msgid ""
@@ -148,6 +153,8 @@ msgid ""
 "doc.org/en/master/usage/restructuredtext/basics.html#inline-markup>`_ to "
 "suppress the space that would otherwise precede the footnote."
 msgstr ""
+"请注意使用了 `反斜杠转义空格 <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#inline-markup>`_ "
+"来抑制原本会出现在脚注前的空格。"
 
 #: ../../../README.rst:116
 msgid ""
@@ -157,4 +164,6 @@ msgid ""
 " Since everything is local, there is no concern with duplicate citations "
 "when using footnotes."
 msgstr ""
-
+"通常情况下，您会在每个文档的底部使用单一的 ``footbibliography`` 指令来表示脚注引用。"
+"尽管支持在每个文档中使用多个 ``footbibliography`` 指令的高级用例，"
+"但由于所有内容都是 local，因此在使用脚注时不会出现重复引用的问题。"
