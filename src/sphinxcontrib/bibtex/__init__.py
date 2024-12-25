@@ -1,19 +1,24 @@
 """
     .. autofunction:: setup
 """
-
+import sys
 from typing import Any, Dict
+
+if sys.version_info >= (3, 10):
+    from importlib.metadata import version
+else:
+    from importlib_metadata import version
 
 from sphinx.application import Sphinx
 
-from .domain import BibtexDomain
-from .foot_domain import BibtexFootDomain
-from .nodes import bibliography, raw_latex, visit_raw_latex, depart_raw_latex
-from .roles import CiteRole
 from .directives import BibliographyDirective
-from .transforms import BibliographyTransform
-from .foot_roles import FootCiteRole
+from .domain import BibtexDomain
 from .foot_directives import FootBibliographyDirective
+from .foot_domain import BibtexFootDomain
+from .foot_roles import FootCiteRole
+from .nodes import bibliography, depart_raw_latex, raw_latex, visit_raw_latex
+from .roles import CiteRole
+from .transforms import BibliographyTransform
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
@@ -43,16 +48,15 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_directive("bibliography", BibliographyDirective)
     app.add_role("cite", CiteRole())
     app.add_node(bibliography, override=True)
-    app.add_node(raw_latex, latex=(visit_raw_latex, depart_raw_latex),
-                 override=True)
+    app.add_node(raw_latex, latex=(visit_raw_latex, depart_raw_latex), override=True)
     app.add_post_transform(BibliographyTransform)
     app.add_domain(BibtexFootDomain)
     app.add_directive("footbibliography", FootBibliographyDirective)
     app.add_role("footcite", FootCiteRole())
 
     return {
-        'version': '2.4.2a0',
-        'env_version': 9,
-        'parallel_read_safe': True,
-        'parallel_write_safe': True,
-        }
+        "version": version("sphinxcontrib-bibtex"),
+        "env_version": 9,
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }

@@ -1,7 +1,8 @@
 from dataclasses import dataclass, field
+from typing import TYPE_CHECKING, Iterable, List
 
-from sphinxcontrib.bibtex.style.template import reference, entry_label
-from typing import TYPE_CHECKING, List, Iterable
+from sphinxcontrib.bibtex.style.template import entry_label, reference
+
 from . import BaseReferenceStyle, BracketStyle
 
 if TYPE_CHECKING:
@@ -17,12 +18,12 @@ class ExtraLabelReferenceStyle(BaseReferenceStyle):
     bracket: BracketStyle = field(default_factory=BracketStyle)
 
     def role_names(self) -> Iterable[str]:
-        return ['label', 'labelpar']
+        return ["label", "labelpar"]
 
     def outer(self, role_name: str, children: List["BaseText"]) -> "Node":
         return self.bracket.outer(
             children,
-            brackets='par' in role_name,
+            brackets="par" in role_name,
             capfirst=False,
         )
 

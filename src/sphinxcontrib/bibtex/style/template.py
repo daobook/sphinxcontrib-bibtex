@@ -12,20 +12,28 @@
 .. autofunction:: sphinxcontrib.bibtex.style.template.entry_label()
 
 .. autofunction:: sphinxcontrib.bibtex.style.template.reference()
+
+.. autofunction:: sphinxcontrib.bibtex.style.template.footnote_reference()
 """
+
+from typing import TYPE_CHECKING, Any, Dict, List, NamedTuple, cast
 
 import docutils.nodes
 import pybtex_docutils
 from pybtex.richtext import Text
 from pybtex.style.template import (
-    Node, _format_list, FieldIsMissing, field, first_of, optional, tag
+    FieldIsMissing,
+    Node,
+    _format_list,
+    field,
+    first_of,
+    optional,
+    tag,
 )
 from sphinx.util.nodes import make_refnode
 
 from sphinxcontrib.bibtex.nodes import raw_latex
 from sphinxcontrib.bibtex.richtext import BaseReferenceText
-
-from typing import TYPE_CHECKING, Dict, Any, cast, NamedTuple
 
 if TYPE_CHECKING:
     from pybtex.backends import BaseBackend
@@ -43,7 +51,7 @@ def node(f):
 
 # copied from pybtex join but extended to allow "et al" formatting
 @node
-def join(children, data, sep='', sep2=None, last_sep=None, other=None):
+def join(children, data, sep="", sep2=None, last_sep=None, other=None):
     """Join text fragments together."""
 
     if sep2 is None:
@@ -61,10 +69,30 @@ def join(children, data, sep='', sep2=None, last_sep=None, other=None):
         return Text(parts[0], other)
 
 
+@node
+def join2(children, data, sep1="", sep2=""):
+    """Join text fragments together."""
+    if not children:
+        return Text()
+    else:
+        return join(sep=sep1)[children[0], join(sep=sep2)[children[1:]]].format_data(
+            data
+        )
+
+
 # copied from pybtex names but using the new join
 @node
-def sentence(children, data, capfirst=False, capitalize=False, add_period=True,
-             sep=', ', sep2=None, last_sep=None, other=None):
+def sentence(
+    children,
+    data,
+    capfirst=False,
+    capitalize=False,
+    add_period=True,
+    sep=", ",
+    sep2=None,
+    last_sep=None,
+    other=None,
+):
     """Join text fragments, capitalize the first letter,
     and add a period to the end.
     """
@@ -86,13 +114,14 @@ def names(children, data, role, **kwargs):
     """Return formatted names."""
     assert not children
     try:
-        persons = data['entry'].persons[role]
+        persons = data["entry"].persons[role]
     except KeyError:
-        raise FieldIsMissing(role, data['entry'])
-    style = data['style']
+        raise FieldIsMissing(role, data["entry"])
+    style = data["style"]
     formatted_names = [
         style.person.style_plugin.format(person, style.person.abbreviate)
-        for person in persons]
+        for person in persons
+    ]
     return join(**kwargs)[formatted_names].format_data(data)
 
 
@@ -100,7 +129,7 @@ def names(children, data, role, **kwargs):
 def entry_label(children, data) -> "BaseText":
     """Node for inserting the label of a formatted entry."""
     assert not children
-    entry = cast("FormattedEntry", data['formatted_entry'])
+    entry = cast("FormattedEntry", data["formatted_entry"])
     return Text(entry.label)
 
 
@@ -108,11 +137,14 @@ class SphinxReferenceInfo(NamedTuple):
     """Tuple containing reference info to enable sphinx to resolve a reference
     to a citation.
     """
+
     builder: "Builder"  #: The Sphinx builder.
-    fromdocname: str    #: Document name of the citation reference.
-    todocname: str      #: Document name of the bibliography.
-    citation_id: str    #: Unique id of the citation within the bibliography.
-    title: str          #: Title attribute for reference node.
+    fromdocname: str  #: Document name of the citation reference.
+    todocname: str  #: Document name of the bibliography.
+    citation_id: str  #: Unique id of the citation within the bibliography.
+    title: str  #: Title attribute for reference node.
+    pre_text: str  #: Text to come before citation.
+    post_text: str  #: Text to come after citation.
 
 
 class SphinxReferenceText(BaseReferenceText[SphinxReferenceInfo]):
@@ -121,21 +153,30 @@ class SphinxReferenceText(BaseReferenceText[SphinxReferenceInfo]):
     for use with :class:`SphinxReferenceInfo`.
     """
 
-    def render(self, backend: "BaseBackend"):
-        assert isinstance(backend, pybtex_docutils.Backend), \
-               "SphinxReferenceText only supports the docutils backend"
+    def render(self, backend: "BaseBackend") -> List[docutils.nodes.Element]:
+        assert isinstance(
+            backend, pybtex_docutils.Backend
+        ), "SphinxReferenceText only supports the docutils backend"
         info = self.info[0]
-        if info.builder.name == 'latex':
-            key = f'cite.{info.todocname}:{info.citation_id}'
+        if info.builder.name == "latex":
+            key = f"cite.{info.todocname}:{info.citation_id}"
             return (
-                [raw_latex(f'\\hyperlink{{{key}}}{{')]
+                [raw_latex(f"\\hyperlink{{{key}}}{{")]
                 + super().render(backend)
-                + [raw_latex('}')]
+                + [raw_latex("}")]
             )
+        elif info.builder.name == "rinoh":
+            children = super().render(backend)
+            refid = f"%{info.todocname}#{info.citation_id}"
+            refnode = docutils.nodes.citation_reference(
+                text=children[0], refid=refid, reftitle=info.title
+            )
+            refnode.extend(children[1:])
+            return [refnode]
         else:
             children = super().render(backend)
             # make_refnode only takes a single child
-            refnode = make_refnode(
+            refnode2 = make_refnode(
                 builder=info.builder,
                 fromdocname=info.fromdocname,
                 todocname=info.todocname,
@@ -143,8 +184,8 @@ class SphinxReferenceText(BaseReferenceText[SphinxReferenceInfo]):
                 child=children[0],
                 title=info.title,
             )
-            refnode.extend(children[1:])  # type: ignore
-            return [refnode]
+            refnode2.extend(children[1:])  # type: ignore
+            return [refnode2]
 
 
 @node
@@ -157,18 +198,35 @@ def reference(children, data: Dict[str, Any]):
     :class:`~sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle`.
     """
     parts = _format_list(children, data)
-    info = data['reference_info']
+    info = data["reference_info"]
     assert isinstance(info, SphinxReferenceInfo)
     return SphinxReferenceText(info, *parts)
+
+
+@node
+def pre_text(children, data: Dict[str, Any]):
+    assert not children
+    info = data["reference_info"]
+    assert isinstance(info, SphinxReferenceInfo)
+    return Text(info.pre_text)
+
+
+@node
+def post_text(children, data: Dict[str, Any]):
+    assert not children
+    info = data["reference_info"]
+    assert isinstance(info, SphinxReferenceInfo)
+    return Text(info.post_text)
 
 
 class FootReferenceInfo(NamedTuple):
     """Tuple containing reference info to enable sphinx to resolve a footnote
     reference.
     """
-    key: str                             #: Citation key.
+
+    key: str  #: Citation key.
     document: "docutils.nodes.document"  #: Current docutils document.
-    refname: str                         #: Citation reference name.
+    refname: str  #: Citation reference name.
 
 
 class FootReferenceText(BaseReferenceText[FootReferenceInfo]):
@@ -178,12 +236,14 @@ class FootReferenceText(BaseReferenceText[FootReferenceInfo]):
     """
 
     def render(self, backend: "BaseBackend"):
-        assert isinstance(backend, pybtex_docutils.Backend), \
-               "FootReferenceText only supports the docutils backend"
+        assert isinstance(
+            backend, pybtex_docutils.Backend
+        ), "FootReferenceText only supports the docutils backend"
         info = self.info[0]
         # see docutils.parsers.rst.states.Body.footnote_reference()
         refnode = docutils.nodes.footnote_reference(
-            '[#%s]_' % info.key, refname=info.refname, auto=1)
+            "[#%s]_" % info.key, refname=info.refname, auto=1
+        )
         info.document.note_autofootnote_ref(refnode)
         info.document.note_footnote_ref(refnode)
         return [refnode]
@@ -198,23 +258,24 @@ def footnote_reference(children, data: Dict[str, Any]):
     :class:`~sphinxcontrib.bibtex.style.referencing.BaseReferenceStyle`.
     """
     assert not children
-    info = data['reference_info']
+    info = data["reference_info"]
     assert isinstance(info, FootReferenceInfo)
     # we need to give the footnote text some fake content
     # otherwise pybtex richtext engine will mess things up
-    return FootReferenceText(info, '#')
+    return FootReferenceText(info, "#")
 
 
 @node
 def year(children, data: Dict[str, Any]) -> "BaseText":
     assert not children
-    return first_of[optional[field('year')], 'n.d.'].format_data(data)
+    return first_of[optional[field("year")], "n.d."].format_data(data)
 
 
 @node
 def author_or_editor_or_title(children, data, **kwargs):
     assert not children
     return first_of[
-        optional[names('author', **kwargs)],
-        optional[names('editor', **kwargs)],
-        tag('em')[field('title')]].format_data(data)
+        optional[names("author", **kwargs)],
+        optional[names("editor", **kwargs)],
+        tag("em")[field("title")],
+    ].format_data(data)

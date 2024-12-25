@@ -86,7 +86,7 @@ Currently available built-in styles are:
 Python packages can make new styles available through
 the ``sphinxcontrib.bibtex.style.referencing``
 `entry point <https://packaging.python.org/guides/creating-and-discovering-plugins/#using-package-metadata>`_ group.
-See sphinxcontrib-bibtex's own ``setup.py`` script for examples.
+See sphinxcontrib-bibtex's own ``pyproject.toml`` configuration for examples.
 
 Tooltips
 ~~~~~~~~
@@ -165,6 +165,19 @@ Roles and Directives
    All these roles modify :rst:role:`cite:p` and :rst:role:`cite:t`.
    The ones starting with ``c`` will capitalize the first letter.
    The ones ending with ``s`` will give the full author list.
+
+.. rst:role:: cite:alp
+.. rst:role:: cite:alps
+
+   .. versionadded:: 2.6.0
+
+   These are identical to :rst:role:`cite:p` and :rst:role:`cite:ps`
+   but suppress brackets.
+   This is useful for instance when needing to add formatted pre-text or post-text.
+
+   .. seealso::
+
+      :ref:`section-pre-post-text`
 
 .. rst:role:: cite
 
@@ -364,8 +377,54 @@ Roles and Directives
    created for references that do not yet have a footnote earlier in the
    document.
 
+Markdown Syntax Using MyST
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you use the MyST parser, all roles and directives are also available in
+Markdown syntax. For example:
+
+.. code-block:: markdown
+
+   See {cite:p}`1987:nelson` for an introduction to non-standard analysis.
+
+   ```{bibliography} references.bib
+   ```
+
+.. seealso:: https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html
+
 Advanced Features
 -----------------
+
+.. _section-pre-post-text:
+
+Adding pre-text and post-text to citations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. versionadded:: 2.6.0
+
+You can add unformatted pre-text and post-text to any citation reference using the
+following syntax:
+
+.. code-block:: rest
+
+   The axioms were introduced by :cite:t:`{see}1977:nelson`.
+   The axioms were introduced by :cite:t:`1977:nelson{p. 1166}`.
+   The axioms were introduced by :cite:t:`{see}1977:nelson{p. 1166}`.
+   Axioms were introduced :cite:p:`{see}1977:nelson`.
+   Axioms were introduced :cite:p:`1977:nelson{p. 1166}`.
+   Axioms were introduced :cite:p:`{see}1977:nelson{p. 1166}`.
+
+Pre- and post-text is not supported for footnote citations.
+
+For formatted pre- and post-text in parenthetical citations,
+you can use the :rst:role:`cite:alp` and :rst:role:`cite:alps` roles.
+These roles suppress the brackets, leaving it to you to add them in the right
+format and place:
+
+.. code-block:: rest
+
+   The three new axioms [the *IST axioms*, :cite:alp:`1977:nelson`] are discussed next.
+
 
 Splitting Bibliographies Per Bib File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -582,8 +641,7 @@ expression.
 .. note::
 
    The expression is parsed using :func:`ast.parse`
-   and then evaluated using an :class:`ast.NodeVisitor`,
-   so it should be reasonably safe against malicious code.
+   and then evaluated using an :class:`ast.NodeVisitor`.
 
 The filter expression supports:
 
@@ -930,6 +988,14 @@ The complete list of warning subtypes that can be suppressed is::
 Known Issues and Workarounds
 ----------------------------
 
+LaTeX Formatting Inside Bibtex Entries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Beyond simple unicode/LaTeX symbol conversions,
+LaTeX formatting in bib files is not supported by pybtex.
+Since sphinxcontrib-bibtex uses pybtex to parse and format bibtex entries,
+that limitation is carried over to sphinxcontrib-bibtex.
+
 Encoding: Percent Signs
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -990,27 +1056,47 @@ This issue will occur also if you use regular citations in Sphinx:
 it has nothing to do with sphinxcontrib-bibtex per se.
 
 To get a closer match between the two outputs,
-you can tell Sphinx to generate a rubric title only for html or
-text outputs:
+first tell Sphinx to suppress its custom bibliography transform by adding the
+following code to your ``conf.py``:
+
+.. code-block:: python
+
+    import sphinx.builders.latex.transforms
+
+    class DummyTransform(sphinx.builders.latex.transforms.BibliographyTransform):
+        def run(self, **kwargs):
+            pass
+
+    sphinx.builders.latex.transforms.BibliographyTransform = DummyTransform
+
+Then create a :file:`references.rst` file that
+you include at the end of your toctree, containing the following code:
 
 .. code-block:: rest
 
-   .. only:: html or text
+    References
+    ==========
 
-      .. rubric:: References
+    .. raw:: latex
 
-   .. bibliography::
+        \begingroup
+        \def\section#1#2{}
+        \def\chapter#1#2{}
+        \begin{thebibliography}{1234}
 
-This code could be placed in a :file:`references.rst` file that
-you include at the end of your toctree.
+    .. bibliography::
 
-Alternatively, to remove the bibliography section title from the
-LaTeX output, you can add the following to your LaTeX preamble:
+    .. raw:: latex
 
-.. code-block:: latex
+        \end{thebibliography}
+        \endgroup
 
-   \usepackage{etoolbox}
-   \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+.. seealso::
+
+   This issue is being tracked on the Sphinx bug tracker here,
+   where you might find other workarounds if the above one does not work
+   for your use case:
+   https://github.com/sphinx-doc/sphinx/issues/4775
 
 Citation References Not Rendered In TocTree Directives
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1023,23 +1109,20 @@ reference.
 This appears to be a limitation of the toctree directive.
 No workaround is currently known.
 
-Import errors after using setup.py install
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unknown Target Name When Using Footnote Citations With Numpydoc
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Because sphinxcontrib-bibtex uses the standard sphinxcontrib namespace,
-installing the package using
-
-.. code-block::
-
-   python setup.py install
-
-may result in a broken installation. This appears to be an issue with
-setuptools. As pip does not have this problem, it is recommended to install
-the package with pip:
-
-.. code-block::
-
-   pip install .
+Numpydoc will sometimes duplicate the short description (i.e. the first line
+of the docstring) of some python objects
+such as member functions. If it does that, and you have a footnote citation
+in the short description, Sphinx may not be able to properly resolve
+the footnote target.
+If this happens,
+the workaround is not to have footnote citations in the first line of
+your docstrings. Instead, put them in the long description.
+Alternatively, set ``numpydoc_class_members_toctree`` to ``False``
+in your ``conf.py`` file. This will cause numpydoc not to
+duplicate the short descriptions for class members.
 
 Import errors when running pytest
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1050,7 +1133,7 @@ To run the tests, please do as follows (ideally, in a virtual environment):
 
 .. code-block::
 
-   pip install . -e
+   pip install -e .
    cd test/
    pytest
 

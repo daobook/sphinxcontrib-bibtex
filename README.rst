@@ -30,8 +30,8 @@ and Weston Nielson's
 
 * Development: https://github.com/mcmtroffaes/sphinxcontrib-bibtex/
 
-.. |ci| image:: https://github.com/mcmtroffaes/sphinxcontrib-bibtex/actions/workflows/python-package.yml/badge.svg
-    :target: https://github.com/mcmtroffaes/sphinxcontrib-bibtex/actions/workflows/python-package.yml
+.. |ci| image:: https://github.com/mcmtroffaes/sphinxcontrib-bibtex/actions/workflows/build.yml/badge.svg
+    :target: https://github.com/mcmtroffaes/sphinxcontrib-bibtex/actions/workflows/build.yml
     :alt: ci
 
 .. |codecov| image:: https://codecov.io/gh/mcmtroffaes/sphinxcontrib-bibtex/branch/develop/graph/badge.svg
@@ -58,9 +58,6 @@ source using ``pip install -e .``. Then add:
    bibtex_bibfiles = ['refs.bib']
 
 to your project's Sphinx configuration file ``conf.py``.
-
-Installation with ``python setup.py install`` is discouraged due to potential
-issues with the sphinxcontrib namespace.
 
 Minimal Example
 ---------------

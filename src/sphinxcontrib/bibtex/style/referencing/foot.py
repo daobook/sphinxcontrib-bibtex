@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING, Union
 
-from . import PersonStyle, GroupReferenceStyle, BracketStyle
+from . import BracketStyle, GroupReferenceStyle, PersonStyle
 from .basic_foot import (
     BasicFootParentheticalReferenceStyle,
     BasicFootTextualReferenceStyle,
@@ -22,15 +22,17 @@ class FootReferenceStyle(GroupReferenceStyle):
     person: PersonStyle = field(default_factory=PersonStyle)
 
     #: Separator between text and reference for textual citations.
-    text_reference_sep: Union["BaseText", str] = ''
+    text_reference_sep: Union["BaseText", str] = ""
 
     def __post_init__(self):
-        self.styles.extend([
-            BasicFootParentheticalReferenceStyle(),
-            BasicFootTextualReferenceStyle(
-                bracket=self.bracket_textual,
-                person=self.person,
-                text_reference_sep=self.text_reference_sep,
-            ),
-        ])
+        self.styles.extend(
+            [
+                BasicFootParentheticalReferenceStyle(),
+                BasicFootTextualReferenceStyle(
+                    bracket=self.bracket_textual,
+                    person=self.person,
+                    text_reference_sep=self.text_reference_sep,
+                ),
+            ]
+        )
         super().__post_init__()
