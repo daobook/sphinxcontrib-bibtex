@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../api.rst:2
 msgid "Extension API"
-msgstr ""
+msgstr "插件 API"
 
 #: ../../api/bibfile.rst:2
 msgid "Bib Files"

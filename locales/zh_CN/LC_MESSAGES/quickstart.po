@@ -97,7 +97,7 @@ msgstr ""
 
 #: ../../../README.rst:71
 msgid "where ``refs.bib`` would contain an entry::"
-msgstr "其中， ``refs.bib`` 文件应包含条目：：："
+msgstr "其中， ``refs.bib`` 文件应包含条目::"
 
 #: ../../../README.rst:80
 msgid "In the default style, this will get rendered as:"
@@ -108,7 +108,6 @@ msgid ""
 "See Nelson [Nel87a]_ for an introduction to non-standard analysis. Non-"
 "standard analysis is fun [Nel87a]_."
 msgstr ""
-"关于非标准分析的介绍，请参见 Nelson 的著作 [Nel87a]_。非标准分析非常有趣 [Nel87a]_。"
 
 #: ../../../README.rst:85 ../../../README.rst:110
 msgid ""

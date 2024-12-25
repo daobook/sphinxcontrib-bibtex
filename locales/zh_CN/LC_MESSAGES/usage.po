@@ -44,7 +44,7 @@ msgid ""
 "unicode characters (for instance, to convert ``\\'e`` into ``é``). Be "
 "sure to write ``\\%`` when you intend to format a percent sign."
 msgstr ""
-"在参考文献文件中，LaTeX 控制字符会自动转换为 Unicode 字符（例如，将``\\'e``转换为 ``é`` ）。"
+"在参考文献文件中，LaTeX 控制字符会自动转换为 Unicode 字符（例如，将 ``\\'e`` 转换为 ``é`` ）。"
 "请确保在需要格式化百分号时写入 ``\\%``。"
 
 #: ../../usage.rst:25
@@ -53,10 +53,11 @@ msgid ""
 "``bibtex_encoding`` variable in your ``conf.py``. If no encoding is "
 "specified, ``utf-8-sig`` is assumed. For example:"
 msgstr ""
+"您可以在 ``conf.py`` 文件中设置参考文献文件的编码，使用 ``bibtex_encoding`` 变量。如果没有指定编码，则假定为 ``utf-8-sig``。例如："
 
 #: ../../usage.rst:35
 msgid "Bibliography Style"
-msgstr ""
+msgstr "Bibliography 风格"
 
 #: ../../usage.rst:37
 msgid ""
@@ -66,14 +67,17 @@ msgid ""
 "``unsrtalpha``. Note that these four styles are identical except for "
 "labelling and sorting. For example:"
 msgstr ""
+"您可以通过在 ``conf.py`` 文件中设置 ``bibtex_default_style`` 变量来更改参考文献的样式。"
+"如果未指定，则使用 ``alpha`` 样式。其他受支持的样式是 ``plain``、``unsrt`` 和 ``unsrtalpha``。"
+"例如："
 
 #: ../../usage.rst:48
 msgid "You can also create your own style (see :ref:`bibtex-custom-formatting`)."
-msgstr ""
+msgstr "您还可以创建自己的样式（请参阅 :ref:`bibtex-custom-formatting`）。"
 
 #: ../../usage.rst:51
 msgid "Referencing Style"
-msgstr ""
+msgstr "引用样式"
 
 #: ../../usage.rst:55
 msgid ""
@@ -81,6 +85,7 @@ msgid ""
 "citation references themselves) using the ``bibtex_reference_style`` "
 "variable in your ``conf.py``. Currently available built-in styles are:"
 msgstr ""
+"你可以通过在 ``conf.py`` 文件中设置 ``bibtex_reference_style`` 变量来更改内联引用样式（即引用标记本身的格式）。目前可用的内置样式有："
 
 #: ../../usage.rst:60
 msgid ""
@@ -89,6 +94,7 @@ msgid ""
 " styles (depending on the labelling style of your bibliography style). "
 "This is the default style."
 msgstr ""
+"``label`` ：使用参考文献样式生成的标签。与 biblatex 的 ``numeric`` 和 ``alphabetic`` 样式类似（取决于参考文献样式的标签样式）。这是默认样式。"
 
 #: ../../usage.rst:66
 msgid ""
@@ -97,6 +103,8 @@ msgid ""
 "from bibliographies. This is because, in docutils, every citation must "
 "have a label."
 msgstr ""
+"``author_year`` ：使用作者和年份。与 natbib 和 biblatex 的 ``authoryear`` 样式类似。"
+"请注意，这不会从参考文献中删除标签。这是因为，在 docutils 中，每个引用都必须有标签。"
 
 #: ../../usage.rst:71
 msgid ""
@@ -105,6 +113,8 @@ msgid ""
 "``plain``. Similar to natbib's ``super`` style and biblatex's "
 "``\\supercite`` command."
 msgstr ""
+"``super`` ：使用由参考文献样式生成的标签作为上标。"
+"这种样式最适合与数字型参考文献样式（如 ``plain`` ）配合使用。类似于 natbib 的 ``super`` 样式和 biblatex 的 ``\\supercite`` 命令。"
 
 #: ../../usage.rst:78
 msgid ""
@@ -112,6 +122,7 @@ msgid ""
 "through the ``bibtex_foot_reference_style`` variable in your ``conf.py``."
 " Currently available built-in styles are:"
 msgstr ""
+"内联参考文献样式可以通过在 ``conf.py`` 文件中设置 ``bibtex_foot_reference_style`` 变量来配置。目前可用的内置样式有："
 
 #: ../../usage.rst:82
 msgid ""
@@ -119,6 +130,7 @@ msgid ""
 "footnote for textual citations. This is the default style (and currently "
 "also the only built-in style)."
 msgstr ""
+"``foot`` ：使用脚注作为括号内的引用，使用作者和脚注作为文本引用。这是默认样式（也是唯一的内置样式）。"
 
 #: ../../usage.rst:86
 msgid ""
@@ -128,10 +140,13 @@ msgid ""
 "/#using-package-metadata>`_ group. See sphinxcontrib-bibtex's own "
 "``pyproject.toml`` configuration for examples."
 msgstr ""
+"Python 包可以通过 ``sphinxcontrib.bibtex.style.referencing`` `entry point "
+"<https://packaging.python.org/guides/creating-and-discovering-plugins/#using-package-metadata>`_ "
+"使用的入口点组。请参阅 sphinxcontrib-bibtex 的 ``pyproject.toml`` 配置文件，"
 
 #: ../../usage.rst:92
 msgid "Tooltips"
-msgstr ""
+msgstr "工具提示"
 
 #: ../../usage.rst:96
 msgid ""
@@ -139,20 +154,23 @@ msgid ""
 "via the html *title* attribute, to allow a preview of the citation by "
 "hovering over the citation reference."
 msgstr ""
+"扩展将生成纯文本工具提示，用于通过 html *title* 属性预览引用，"
+"允许在悬停时预览引用。"
 
 #: ../../usage.rst:100
 msgid "To disable these tooltips, set ``bibtex_tooltips`` to ``False``."
-msgstr ""
+msgstr "禁用这些工具提示的方法是将 ``bibtex_tooltips`` 设置为 ``False``。"
 
 #: ../../usage.rst:102
 msgid ""
 "By default, the bibliography style is used to format the tooltips. You "
 "can set the ``bibtex_tooltips_style`` option to use a different style."
 msgstr ""
+"默认情况下，将使用参考文献样式来格式化工具提示。您可以设置 ``bibtex_tooltips_style`` 选项来使用不同的样式。"
 
 #: ../../usage.rst:106
 msgid "Roles and Directives"
-msgstr ""
+msgstr "角色和指令"
 
 #: ../../usage.rst:112
 msgid ""
@@ -161,15 +179,17 @@ msgid ""
 "depending on the style) between brackets. Similar to natbib's ``\\citep``"
 " command, or biblatex's ``\\parencite`` command. For example:"
 msgstr ""
+"创建括号内的引用，指向参考文献条目。这将在括号内放置引用信息（作者和年份或标签，取决于样式）。"
+"类似于 natbib 的 ``\\citep`` 命令，或者 biblatex 的 ``\\parencite`` 命令。例如："
 
 #: ../../usage.rst:123 ../../usage.rst:150 ../../usage.rst:310
 #: ../../usage.rst:336
 msgid "which would be equivalent to the following LaTeX code:"
-msgstr ""
+msgstr "等价于以下 LaTeX 代码："
 
 #: ../../usage.rst:129
 msgid "Multiple keys can be specified at once:"
-msgstr ""
+msgstr "多个键可以一次性指定："
 
 #: ../../usage.rst:139
 msgid ""
@@ -178,10 +198,12 @@ msgid ""
 "citation reference style. Similar to natbib's ``\\citet`` command, or "
 "biblatex's ``\\textcite`` command. For example:"
 msgstr ""
+"创建文本引用。这通常会呈现第一个作者的名称，后跟年份或标签，具体取决于引用样式。"
+"类似 natbib 的 ``\\citet`` 命令，或者 biblatex 的 ``\\textcite`` 命令。例如："
 
 #: ../../usage.rst:156 ../../usage.rst:342
 msgid "Here too, multiple keys can be specified at once."
-msgstr ""
+msgstr "这里也可以一次指定多个键。"
 
 #: ../../usage.rst:165
 msgid ""
@@ -189,6 +211,7 @@ msgid ""
 "ones starting with ``c`` will capitalize the first letter. The ones "
 "ending with ``s`` will give the full author list."
 msgstr ""
+"这些角色修改了 :rst:role:`cite:p` 和 :rst:role:`cite:t`。以 ``c`` 开头的角色会将第一个字母大写。以 ``s`` 结尾的角色会给出完整的作者列表。"
 
 #: ../../usage.rst:174
 msgid ""
@@ -196,6 +219,7 @@ msgid ""
 "suppress brackets. This is useful for instance when needing to add "
 "formatted pre-text or post-text."
 msgstr ""
+"这些角色与 :rst:role:`cite:p` 和 :rst:role:`cite:ps` 相同，但会抑制括号。这对于需要在引用前或引用后添加格式化的预文本或后文本很有用。"
 
 #: ../../usage.rst:180
 msgid ":ref:`section-pre-post-text`"
@@ -207,30 +231,35 @@ msgid ""
 "parenthetical citation reference. Provided for convenience and "
 "compatibility with older versions."
 msgstr ""
+"这是 :rst:role:`cite:p` 角色的别名，用于创建括号内的引用。提供此别名是为了方便和与旧版本兼容。"
 
 #: ../../usage.rst:193
 msgid ""
 "Create a citation using just the label. Use the ``par`` version to "
 "include brackets."
 msgstr ""
+"使用标签创建引用。使用 ``par`` 版本来包含括号。"
 
 #: ../../usage.rst:201
 msgid ""
 "Create a citation using just the year. Use the ``par`` version to include"
 " brackets."
 msgstr ""
+"使用年份创建引用。使用 ``par`` 版本来包含括号。"
 
 #: ../../usage.rst:213
 msgid ""
 "Create a citation using just the author(s). Use the ``par`` version to "
 "include brackets, and the ``c`` version to capitalize the first letter."
 msgstr ""
+"使用作者创建引用。使用 ``par`` 版本来包含括号，使用 ``c`` 版本来将第一个字母大写。"
 
 #: ../../usage.rst:221
 msgid ""
 "Register a citation key as being cited without generating a reference, "
 "similar to LaTeX's nocite command."
 msgstr ""
+"注册引用键，使其被引用但不生成引用，类似于 LaTeX 的 nocite 命令。"
 
 #: ../../usage.rst:226
 msgid ""
@@ -240,6 +269,8 @@ msgid ""
 "citations. Citation keys can also be explicitly listed under the "
 "directive; see :ref:`section-listing-citation-keys`."
 msgstr ""
+"创建所有引用的文献。在 Sphinx 中，引用在整个项目中是全局解析的。"
+"通常，您的整个项目中只有一个文献指令，它收集所有引用。引用键也可以显式列出，参见 :ref:`section-listing-citation-keys`。"
 
 #: ../../usage.rst:235
 msgid ""
@@ -247,34 +278,38 @@ msgid ""
 "documents, so you must take care that no citation key is included more "
 "than once."
 msgstr ""
+"Sphinx 将尝试在所有文档中解析对文献的引用，因此您必须小心，确保没有引用键被重复包含。"
 
 #: ../../usage.rst:239
 msgid "The following options are recognized (all are optional)."
-msgstr ""
+msgstr "以下选项是可识别的（所有都是可选的）。"
 
 #: ../../usage.rst:243
 msgid ""
 "Include all references, instead of just the cited ones (equivalent to "
 "``\\nocite{*}`` in LaTeX). For example:"
 msgstr ""
+"包含所有引用，而不仅仅是被引用的引用（相当于 LaTeX 中的 ``\\nocite{*}`` ）。例如："
 
 #: ../../usage.rst:253
 msgid ""
 "Causes all references that were not cited to be included. Listed "
 "references remain included."
 msgstr ""
+"导致未被引用的引用被包含。列出的引用仍然被包含。"
+
 
 #: ../../usage.rst:258
 msgid "This is the default and need not be specified."
-msgstr ""
+msgstr "这是默认值，不需要指定。"
 
 #: ../../usage.rst:262
 msgid "Overrides the default bibliography style. For example:"
-msgstr ""
+msgstr "覆盖默认的文献样式。例如："
 
 #: ../../usage.rst:273
 msgid "See :ref:`section-lists`."
-msgstr ""
+msgstr "阅读 :ref:`section-lists`。"
 
 #: ../../usage.rst:277
 msgid "See :ref:`section-label-prefixing`."
@@ -289,12 +324,14 @@ msgid ""
 "See :ref:`section-filtering`. Note that listed references are always "
 "included, regardless of any filtering."
 msgstr ""
+"阅读 :ref:`section-filtering`。请注意，列出的引用始终被包含，无论是否进行过滤。"
 
 #: ../../usage.rst:303
 msgid ""
 "Create a parenthetical footnote reference to a bibliographic entry. For "
 "example:"
 msgstr ""
+"创建括号内的脚注引用，指向参考文献条目。例如："
 
 #: ../../usage.rst:316
 msgid ""
@@ -302,14 +339,16 @@ msgid ""
 "doc.org/en/master/usage/restructuredtext/basics.html#inline-markup>`_ to "
 "suppress the space that would otherwise precede the footnote."
 msgstr ""
+"注意在引用之前使用 `反斜杠转义的空格 <https://www.sphinx-"
+"doc.org/en/master/usage/restructuredtext/basics.html#inline-markup>`_ ，来抑制原本会在脚注前出现的空格。"
 
 #: ../../usage.rst:320
 msgid "As with all citation roles, multiple keys can be specified:"
-msgstr ""
+msgstr "与所有引用角色一样，可以指定多个键："
 
 #: ../../usage.rst:330
 msgid "Create a textual footnote reference to a bibliographic entry. For example:"
-msgstr ""
+msgstr "创建文本脚注引用，指向参考文献条目。例如："
 
 #: ../../usage.rst:351
 msgid ""
@@ -317,6 +356,7 @@ msgid ""
 " The ones starting with ``c`` will capitalize the first letter. The ones "
 "ending with ``s`` will give the full author list."
 msgstr ""
+"这些角色修改了 :rst:role:`footcite:p` 和 :rst:role:`footcite:t`。以 ``c`` 开头的角色会将第一个字母大写。以 ``s`` 结尾的角色会给出完整的作者列表。"
 
 #: ../../usage.rst:359
 msgid ""
@@ -324,6 +364,7 @@ msgid ""
 "parenthetical footnote citation reference. Provided for convenience and "
 "compatibility with older versions."
 msgstr ""
+"这是 :rst:role:`footcite:p` 角色的别名，用于创建括号内的脚注引用。提供此别名是为了方便和与旧版本兼容。"
 
 #: ../../usage.rst:367
 msgid ""
@@ -332,6 +373,7 @@ msgid ""
 "footbibliography directive at the bottom of each document that has "
 "footcite citations."
 msgstr ""
+"在当前文档中被引用的所有引用的脚注将在此位置创建。通常，每个文档的底部都有一个脚注文献指令，其中包含脚注引用。"
 
 #: ../../usage.rst:372
 msgid ""
@@ -339,6 +381,7 @@ msgid ""
 " Footnotes are inserted in the order in which they occur in the document,"
 " so the sorting style is also ignored."
 msgstr ""
+"标准数字脚注标签被使用，因此标签样式被忽略。脚注按文档中出现的顺序插入，因此排序样式也被忽略。"
 
 #: ../../usage.rst:376
 msgid ""
@@ -346,16 +389,18 @@ msgid ""
 "created for references that do not yet have a footnote earlier in the "
 "document."
 msgstr ""
+"如果在同一文档中多次指定，脚注只会为文档中之前尚未有脚注的引用创建。"
 
 #: ../../usage.rst:381
 msgid "Markdown Syntax Using MyST"
-msgstr ""
+msgstr "使用 MyST 语法的 Markdown"
 
 #: ../../usage.rst:383
 msgid ""
 "If you use the MyST parser, all roles and directives are also available "
 "in Markdown syntax. For example:"
 msgstr ""
+"如果您使用 MyST 解析器，所有角色和指令也可以在 Markdown 语法中使用。例如："
 
 #: ../../usage.rst:393
 msgid ""
@@ -365,21 +410,22 @@ msgstr ""
 
 #: ../../usage.rst:396
 msgid "Advanced Features"
-msgstr ""
+msgstr "高级功能"
 
 #: ../../usage.rst:401
 msgid "Adding pre-text and post-text to citations"
-msgstr ""
+msgstr "添加预文本和后文本到引用"
 
 #: ../../usage.rst:405
 msgid ""
 "You can add unformatted pre-text and post-text to any citation reference "
 "using the following syntax:"
 msgstr ""
+"您可以使用以下语法向任何引用添加未格式化的预文本和后文本："
 
 #: ../../usage.rst:417
 msgid "Pre- and post-text is not supported for footnote citations."
-msgstr ""
+msgstr "对脚注引用不支持预文本和后文本。"
 
 #: ../../usage.rst:419
 msgid ""
@@ -388,10 +434,11 @@ msgid ""
 "suppress the brackets, leaving it to you to add them in the right format "
 "and place:"
 msgstr ""
+"对括号内的引用，您可以使用 :rst:role:`cite:alp` 和 :rst:role:`cite:alps` 角色。这些角色会抑制括号，让您在正确的格式和位置添加它们："
 
 #: ../../usage.rst:430
 msgid "Splitting Bibliographies Per Bib File"
-msgstr ""
+msgstr "按 Bib 文件拆分文献"
 
 #: ../../usage.rst:434
 msgid ""
@@ -399,6 +446,7 @@ msgid ""
 "references from specific bib files, you can specify the relevant bib "
 "files as an optional argument to the directive."
 msgstr ""
+"如果您希望每个文献只包含来自特定 bib 文件的引用，您可以将相关的 bib 文件作为指令的可选参数指定。"
 
 #: ../../usage.rst:438
 msgid ""
@@ -406,16 +454,18 @@ msgid ""
 "books, assuming your articles are in ``articles.bib`` and your books are "
 "in ``books1.bib`` and ``books2.bib``."
 msgstr ""
+"以下示例显示了如何将您的引用按文章和书籍拆分，假设您的文章位于 ``articles.bib`` 中，您的书籍位于 ``books1.bib`` 和 ``books2.bib`` 中。"
 
 #: ../../usage.rst:452
 msgid ""
 "The bib files must be specified as a path that is relative to the "
 "containing document."
 msgstr ""
+"该 bib 文件必须是相对于包含文档的路径。"
 
 #: ../../usage.rst:458
 msgid "Bullet Lists and Enumerated Lists"
-msgstr ""
+msgstr "点列表和枚举列表"
 
 #: ../../usage.rst:462
 msgid ""
@@ -423,18 +473,21 @@ msgid ""
 "default, a paragraph of standard citations is generated. However, "
 "instead, you can also generate a bullet list, or an enumerated list."
 msgstr ""
+"您可以更改用于呈现文献的列表类型。默认情况下，将生成一个标准引用的段落。但是，您也可以生成点列表或枚举列表。"
 
 #: ../../usage.rst:477
 msgid ""
 "Note that citations to these types of bibliography lists will not be "
 "resolved."
 msgstr ""
+"请注意，对这些类型的文献列表的引用不会被解析。"
 
 #: ../../usage.rst:480
 msgid ""
 "For enumerated lists, you can also specify the type (default is "
 "``arabic``), and the start of the sequence (default is ``1``)."
 msgstr ""
+"对于枚举列表，您还可以指定类型（默认为 ``arabic`` ）和序列的开始（默认为 ``1`` ）。"
 
 #: ../../usage.rst:491
 msgid ""
@@ -442,6 +495,7 @@ msgid ""
 "b, c, ...), ``upperalpha`` (A, B, C, ...), ``lowerroman`` (i, ii, iii, "
 "...), or ``upperroman`` (I, II, III, ...)."
 msgstr ""
+"enumtype 可以是 ``arabic`` (1, 2, 3,...)、 ``loweralpha`` (a, b, c,...)、 ``upperalpha`` (A, B, C,...)、 ``lowerroman`` (i, ii, iii,...) 或 ``upperroman`` (I, II, III,...)。"
 
 #: ../../usage.rst:498
 msgid ""
@@ -450,10 +504,11 @@ msgid ""
 ":rst:dir:`bibliography` directive. This is helpful if you split up your "
 "bibliography but still want to enumerate the entries continuously."
 msgstr ""
+"start 可以是任何正整数 (1, 2, 3,...) 或 ``continue`` ，如果您希望枚举从最后一个 :rst:dir:`bibliography` 指令继续。这在您将文献拆分为多个部分但仍然希望连续枚举条目时非常有用。"
 
 #: ../../usage.rst:507
 msgid "Listing Citation Keys"
-msgstr ""
+msgstr "列出引用键"
 
 #: ../../usage.rst:511
 msgid ""
@@ -465,6 +520,9 @@ msgid ""
 "key prefix if you are using that option (see :ref:`section-key-"
 "prefixing`). For example:"
 msgstr ""
+"如果您有很多未引用的引用，那么使用 :rst:role:`cite:empty` 可能更方便。"
+"您可以直接在希望它们出现的文献部分下列出引用键。"
+"每个引用键可以单独占一行。如果使用了键前缀选项（参见 :ref:`section-key-prefixing`），则这些键不应包含前缀。例如："
 
 #: ../../usage.rst:528
 msgid ""
@@ -474,30 +532,34 @@ msgid ""
 "filtering. So, if you only want the listed keys to be included, you can "
 "use the ``:filter: False`` option:"
 msgstr ""
+"这将导致文献生成对所有被引用的引用的引用，以及对 bibtex 键 ``nelson1987`` 和 ``boole1854`` 的引用。"
+"无论过滤如何，列出的键始终被包含。因此，如果您只想包含列出的键，您可以使用 ``:filter: False`` 选项："
 
 #: ../../usage.rst:543
 msgid "See :ref:`section-filtering` for more information on filtering."
-msgstr ""
+msgstr "请参阅 :ref:`section-filtering` 以获取有关过滤的更多信息。"
 
 #: ../../usage.rst:548
 msgid "Label Prefixing"
-msgstr ""
+msgstr "标签前缀"
 
 #: ../../usage.rst:552
 msgid ""
 "If you have multiple bibliographies, and experience duplicate labels, use"
 " the ``labelprefix`` option."
 msgstr ""
+"如果你有多个参考文献列表，并且遇到重复的标签问题，可以使用 ``labelprefix`` 选项。"
 
 #: ../../usage.rst:572
 msgid "Key Prefixing"
-msgstr ""
+msgstr "键前缀"
 
 #: ../../usage.rst:576
 msgid ""
 "If you have multiple bibliographies, and you would like entries to be "
 "repeated in different documents, then use the ``keyprefix`` option."
 msgstr ""
+"如果你有多个参考文献列表，并且你希望在不同的文档中重复条目，那么可以使用 ``keyprefix`` 选项。"
 
 #: ../../usage.rst:579
 msgid ""
@@ -505,22 +567,25 @@ msgid ""
 "``boole1854`` in both of these documents, with the bibliography entries "
 "showing in both of the documents. In one document you could have:"
 msgstr ""
+"例如，假设您有两个文档，并且希望在这两个文档中都引用 ``boole1854`` ，那么文献条目将显示在两个文档中。在一个文档中，您可以这样写："
 
 #: ../../usage.rst:591
 msgid "whilst in the other document you could have:"
-msgstr ""
+msgstr "而在另一个文档中，你可以使用："
 
 #: ../../usage.rst:601
 msgid ""
 "The bibliographies will then both generate an entry for ``boole1854``, "
 "with links and backlinks as expected."
 msgstr ""
+"文献列表将生成两个 ``boole1854`` 的条目，链接和反向链接如预期的那样。"
 
 #: ../../usage.rst:604
 msgid ""
 "If you list citation keys, you should include those *without* key prefix."
 " For example:"
 msgstr ""
+"如果您列出了引用键，那么应该包括那些 *没有* 键前缀。例如："
 
 #: ../../usage.rst:617
 msgid ":ref:`section-local-bibliographies`"
@@ -528,7 +593,7 @@ msgstr ""
 
 #: ../../usage.rst:622
 msgid "Filtering"
-msgstr ""
+msgstr "过滤器"
 
 #: ../../usage.rst:626
 msgid ""
@@ -537,34 +602,38 @@ msgid ""
 "more advanced selection of bibliographic entries is desired. For this "
 "purpose, you can use the ``filter`` option:"
 msgstr ""
+"虽然 ``cited``、 ``all`` 和 ``notcited`` 选项以及 :ref:`section-listing-citation-keys` 可以覆盖许多用例，"
+"但有时需要更高级的文献条目选择。为此，您可以使用 ``filter`` 选项："
 
 #: ../../usage.rst:638
 msgid ""
 "The string specified in the filter option must be a valid Python "
 "expression."
 msgstr ""
+"在 ``filter`` 选项中指定的字符串必须是有效的 Python 表达式。"
 
 #: ../../usage.rst:643
 msgid ""
 "The expression is parsed using :func:`ast.parse` and then evaluated using"
 " an :class:`ast.NodeVisitor`."
 msgstr ""
+"使用 :func:`ast.parse` 解析表达式，然后使用 :class:`ast.NodeVisitor` 进行评估。"
 
 #: ../../usage.rst:646
 msgid "The filter expression supports:"
-msgstr ""
+msgstr "过滤器表达式支持："
 
 #: ../../usage.rst:648
 msgid "The boolean operators ``and``, ``or``."
-msgstr ""
+msgstr "布尔运算符 ``and``, ``or``。"
 
 #: ../../usage.rst:650
 msgid "The unary operator ``not``."
-msgstr ""
+msgstr "一元运算符 ``not``。"
 
 #: ../../usage.rst:652
 msgid "The comparison operators ``==``, ``<=``, ``<``, ``>=``, and ``>``."
-msgstr ""
+msgstr "比较运算符 ``==``, ``<=``, ``<``, ``>=``, 和 ``>``。"
 
 #: ../../usage.rst:654
 msgid ""
@@ -572,68 +641,74 @@ msgid ""
 " side is the string to be matched, and the right hand side is the regular"
 " expression. Matching is case insensitive. For example:"
 msgstr ""
+"使用 ``%`` 运算符进行正则表达式匹配，其中左侧是要匹配的字符串，右侧是正则表达式。匹配不区分大小写。例如："
 
 #: ../../usage.rst:664
 msgid "would include all entries that have the word \"relativity\" in the title."
-msgstr ""
+msgstr "将包括标题中包含单词 \"relativity\" 的所有条目。"
 
 #: ../../usage.rst:668
 msgid "The implementation uses :func:`re.search`."
-msgstr ""
+msgstr "实现使用 :func:`re.search`。"
 
 #: ../../usage.rst:670
 msgid "Single and double quoted strings, such as ``'hello'`` or ``\"world\"``."
-msgstr ""
+msgstr "单引号和双引号字符串，例如 ``'hello'`` 或 ``\"world\"``。"
 
 #: ../../usage.rst:672
 msgid ""
 "Set literals, such has ``{\"hello\", \"world\"}``, as well as the set "
 "operators ``&``, ``|``, ``in``, and ``not in``."
 msgstr ""
+"集合字面量，例如 ``{\"hello\", \"world\"}``，以及集合运算符 ``&``，``|``，``in`` 和 ``not in``。"
 
 #: ../../usage.rst:677
 msgid "Various identifiers, such as:"
-msgstr ""
+msgstr "各种标识符，例如："
 
 #: ../../usage.rst:679
 msgid ""
 "``type`` is the entry type, as a lower case string (i.e. "
 "``\"inproceedings\"``)."
 msgstr ""
+"``type`` 是条目类型，作为小写字符串（例如 ``\"inproceedings\"``）。"
 
 #: ../../usage.rst:682
 msgid ""
 "``key`` is the entry key, as a lower case string (this is because keys "
 "are considered case insensitive)."
 msgstr ""
+"``key`` 是条目键，作为小写字符串（因为键被认为是不区分大小写的）。"
 
 #: ../../usage.rst:685
 msgid ""
 "``cited`` evaluates to ``True`` if the entry was cited in the document, "
 "and to ``False`` otherwise."
 msgstr ""
+"``cited`` 在条目被引用时评估为 ``True``，否则为 ``False``。"
 
 #: ../../usage.rst:688
 msgid "``docname`` evaluates to the name of the current document."
-msgstr ""
+msgstr "``docname`` 评估为当前文档的名称。"
 
 #: ../../usage.rst:692
 msgid "``docnames`` evaluates to a set of names from which the entry is cited."
-msgstr ""
+msgstr "``docnames`` 评估为条目被引用的文档名称集合。"
 
 #: ../../usage.rst:696
 msgid "``True`` and ``False``."
-msgstr ""
+msgstr "``True`` 和 ``False``。"
 
 #: ../../usage.rst:698
 msgid ""
 "``author`` is the entry string of authors in standard format (last, "
 "first), separated by \"and\"."
 msgstr ""
+"``author`` 是标准格式的作者字符串（姓，名），用 \"and\" 分隔。"
 
 #: ../../usage.rst:701
 msgid "``editor`` is similar to ``author`` but for editors."
-msgstr ""
+msgstr "``editor`` 类似于 ``author``，但用于编辑人员。"
 
 #: ../../usage.rst:703
 msgid ""
@@ -643,22 +718,28 @@ msgid ""
 "then it evaluates to the empty string. Here is an example of how one "
 "would typically write an expression to filter on an optional field:"
 msgstr ""
+"任何其他（小写）标识符评估为包含相应字段值的字符串，例如 ``title``，"
+"``publisher``，``year`` 等等。如果条目中缺少该项，则它会评估为空字符串。"
+"以下是如何编写表达式来过滤可选字段的示例："
+
 
 #: ../../usage.rst:718
 msgid ""
 "which would include all cited entries that have a year that is less or "
 "equal than 2003; any entries that do not specify a year would be omitted."
 msgstr ""
+"这将包括所有被引用的条目，这些条目的年份小于或等于 2003；任何未指定年份的条目将被省略。"
 
 #: ../../usage.rst:725
 msgid "Local Bibliographies"
-msgstr ""
+msgstr "本地文献"
 
 #: ../../usage.rst:727
 msgid ""
 "The easiest way to have a local bibliography per document is to use "
 ":rst:role:`footcite` along with :rst:dir:`footbibliography`."
 msgstr ""
+"最简单的方法是在每个文档中使用 :rst:role:`footcite` 和 :rst:dir:`footbibliography`。"
 
 #: ../../usage.rst:731
 msgid ""
@@ -666,6 +747,7 @@ msgid ""
 "``keyprefix`` and ``filter`` options can be used to achieve local "
 "bibliographies with :rst:role:`cite` and :rst:dir:`bibliography`."
 msgstr ""
+"如果您更喜欢使用常规引用而不是脚注，那么可以使用 ``keyprefix`` 和 ``filter`` 选项来实现 :rst:role:`cite` 和 :rst:dir:`bibliography` 的本地文献。"
 
 #: ../../usage.rst:736
 msgid ""
@@ -675,34 +757,40 @@ msgid ""
 "with references to multiple local bibliographies, use the ``keyprefix`` "
 "system; see :ref:`section-key-prefixing`."
 msgstr ""
+"本地文献的 ``filter`` 系统只能在多个文档中使用相同的引用键时使用。这通常不是这样的。"
+"如果您需要在多个文档中引用多个本地文献的相同引用，那么可以使用 ``keyprefix`` 系统；请参阅 :ref:`section-key-prefixing`。"
 
 #: ../../usage.rst:743
 msgid ""
 "To create a bibliography that includes only citations that were cited in "
 "the current document, use the following filter:"
 msgstr ""
+"要创建仅包含当前文档中引用过的文献的参考文献列表，请使用以下过滤器："
 
 #: ../../usage.rst:751
 msgid ""
 "More generally, you can create bibliographies for citations that were "
 "cited from specific documents only:"
 msgstr ""
+"更一般地，您可以为仅从特定文档引用的文献创建参考文献列表："
 
 #: ../../usage.rst:759
 msgid ""
 "This bibliography will include all citations that were cited from "
 ":file:`doc1.rst` or :file:`doc2.rst`. Another hypothetical example:"
 msgstr ""
+"此参考文献列表将包含所有从 `:file:`doc1.rst` 或 `:file:`doc2.rst` 中引用的文献。另一个假设的例子："
 
 #: ../../usage.rst:767
 msgid ""
 "This bibliography will include all citations that were cited in "
 ":file:`doc1.rst` or :file:`doc2.rst`, but nowhere else."
 msgstr ""
+"此参考文献列表将包含所有在 `:file:`doc1.rst` 或 `:file:`doc2.rst` 中引用的文献，但其他地方没有引用。"
 
 #: ../../usage.rst:773
 msgid "Custom Formatting, Sorting, and Labelling"
-msgstr ""
+msgstr "自定义格式化，排序和标记"
 
 #: ../../usage.rst:775
 msgid ""
@@ -710,14 +798,16 @@ msgid ""
 "styles, using setuptools entry points, as documented here: "
 "https://docs.pybtex.org/api/plugins.html"
 msgstr ""
+":mod:`pybtex` 提供了一种非常强大的方式来创建和注册新样式，使用 setuptools 入口点，"
+"在此处进行了文档说明：https://docs.pybtex.org/api/plugins.html"
 
 #: ../../usage.rst:779
 msgid "Simply add the following code to your ``conf.py``:"
-msgstr ""
+msgstr "简化地将以下代码添加到您的 ``conf.py``:"
 
 #: ../../usage.rst:796
 msgid "Now ``mystyle`` will be available to you as a formatting style:"
-msgstr ""
+msgstr "现在 ``mystyle`` 将作为格式化样式可用："
 
 #: ../../usage.rst:802
 msgid ""
@@ -725,6 +815,7 @@ msgid ""
 "/sphinxcontrib-bibtex/tree/develop/test/roots/test-"
 "bibliography_style_nowebref"
 msgstr ""
+"简单的示例可在此处找到：https://github.com/mcmtroffaes/sphinxcontrib-bibtex/tree/develop/test/roots/test-bibliography_style_nowebref"
 
 #: ../../usage.rst:805
 msgid ""
@@ -734,6 +825,8 @@ msgid ""
 "devs/pybtex/src/master/pybtex/style/formatting/unsrt.py?at=master&fileviewer"
 "=file-view-default"
 msgstr ""
+"格式化代码使用了一个非常直观的模板引擎。"
+"`unsrt` 的源代码提供了许多优秀的示例：https://bitbucket.org/pybtex-devs/pybtex/src/master/pybtex/style/formatting/unsrt.py?at=master&fileviewer=file-view-default"
 
 #: ../../usage.rst:809
 msgid ""
@@ -744,6 +837,9 @@ msgid ""
 "``pybtex.style.sorting`` group). A few minimal examples demonstrating how"
 " to create custom label styles are available here:"
 msgstr ""
+"上面的示例仅演示了自定义格式化样式插件。"
+"同样，可以注册自定义作者/编辑命名插件（使用 ``pybtex.style.names`` 组），标记插件（使用 ``pybtex.style.labels`` 组）"
+"和排序插件（使用 ``pybtex.style.sorting`` 组）。一些最小化的示例展示了如何创建自定义标签样式，这些示例可在此处找到："
 
 #: ../../usage.rst:819
 msgid ""
@@ -759,7 +855,7 @@ msgstr ""
 
 #: ../../usage.rst:823
 msgid "Custom Inline Citation References"
-msgstr ""
+msgstr "自定义内联引用"
 
 #: ../../usage.rst:827
 msgid ""
@@ -768,6 +864,7 @@ msgid ""
 "the default square brackets. Simply add the following code to your "
 "``conf.py``:"
 msgstr ""
+"创建并注册您自己的引用样式。例如，希望使用作者-年份样式，而不是默认的方括号。只需将以下代码添加到您的 ``conf.py`` 中："
 
 #: ../../usage.rst:864
 msgid ""
@@ -776,10 +873,12 @@ msgid ""
 "passed to the constructor when sphinxcontrib-bibtex instantiates your "
 "style."
 msgstr ""
+"您必须将您的样式装饰为数据类，并为每个字段 **包含类型注解**，以确保在 sphinxcontrib-bibtex 实例化您的样式时正确传递这些值。"
+
 
 #: ../../usage.rst:869
 msgid "Now ``author_year_round`` will be available to you as a formatting style:"
-msgstr ""
+msgstr "现在 ``author_year_round`` 将作为格式化样式可用："
 
 #: ../../usage.rst:875
 msgid ""
@@ -787,10 +886,11 @@ msgid ""
 "/sphinxcontrib-bibtex/tree/develop/test/roots/test-"
 "citation_style_round_brackets"
 msgstr ""
+"最简示例可在此处查看：https://github.com/mcmtroffaes/sphinxcontrib-bibtex/tree/develop/test/roots/test-citation_style_round_brackets"
 
 #: ../../usage.rst:879
 msgid "Custom Html Anchors"
-msgstr ""
+msgstr "自定义 HTML 锚点"
 
 #: ../../usage.rst:883
 msgid ""
@@ -799,6 +899,7 @@ msgid ""
 "can be used as html anchors. They are automatically generated by docutils"
 " and are thereby guaranteed not to clash."
 msgstr ""
+"对于每个引用和每个参考文献，都会生成一个形式为 ``idxxx``（其中 ``xxx`` 是某个数字）的标识符。这些标识符可以用作 HTML 锚点。它们由 docutils 自动生成，因此保证不会发生冲突。"
 
 #: ../../usage.rst:889
 msgid ""
@@ -810,12 +911,16 @@ msgid ""
 " setting up the appropriate identifier templates in your ``conf.py`` "
 "file, for instance as follows:"
 msgstr ""
+"然而，有时从其他未使用 Sphinx 生成的外部文档中引用参考文献条目会很有用。"
+"由于更新文档时生成的标识符很容易出错，您可以通过字符串模板自定义它们，如果需要的话。"
+"如果您这样做，确保没有锚点会冲突的责任在于您，通过在您的 ``conf.py`` 文件中设置适当的标识符模板来实现这一点，例如如下所示："
 
 #: ../../usage.rst:904
 msgid ""
 "If you have at most one :rst:dir:`bibliography` directive per document, "
 "then you can also use:"
 msgstr ""
+"如果每个文档最多只有一个 :rst:dir:`bibliography` 指令，那么您也可以使用："
 
 #: ../../usage.rst:911
 msgid ""
@@ -830,6 +935,10 @@ msgid ""
 "remove and/or translate any illegal characters. In particular, colons and"
 " underscores will be translated into dashes."
 msgstr ""
+"``bibliography_count`` 模板变量计算当前文档中的 :rst:dir:`bibliography` 指令数量，从而为每个文档内的 :rst:dir:`bibliography` 指令提供一个唯一的编号。"
+"``footbibliography_count`` 模板变量的工作原理类似，但适用于 :rst:dir:`footbibliography` 指令。"
+"``key`` 模板变量对应于 bibtex 引用键，包括指定的键前缀（如果有的话）。"
+"格式化模板后，结果字符串将通过 docutils 的 ``make_id`` 函数进行过滤，该函数会移除并/或翻译任何非法字符。特别是冒号和下划线将被转换为破折号。"
 
 #: ../../usage.rst:926
 msgid ""
@@ -841,10 +950,12 @@ msgid ""
 ":rst:dir:`bibliography` directive prior to knowing whether or not the "
 "citation needs to be included."
 msgstr ""
-
+"如果在任何文档中有多个 :rst:dir:`bibliography` 指令，那么你*必须*将 ``bibliography_count`` 包含在 ``bibtex_cite_id`` 模板中，"
+"以避免重复标识符的问题，*即使没有重复引用也是如此*。"
+"这是因为在插件确定是否需要包含引用之前，必须为每个 :rst:dir:`bibliography` 指令的每个键生成一个标识符。"
 #: ../../usage.rst:936
 msgid "Custom Bibliography Header"
-msgstr ""
+msgstr "自定义参考文献标题"
 
 #: ../../usage.rst:940
 msgid ""
@@ -854,38 +965,42 @@ msgid ""
 " to add a header to this. For example, in your ``conf.py`` you could "
 "have:"
 msgstr ""
+"默认情况下，:rst:dir:`bibliography` 和 :rst:dir:`footbibliography` 指令仅插入一个段落。"
+"可以通过设置 ``bibtex_bibliography_header`` 和 ``bibtex_footbibliography_header`` 配置变量来为其添加标题。例如，在您的 `conf.py` 中可以这样设置："
 
 #: ../../usage.rst:954
 msgid "This adds a rubric title to every bibliography."
-msgstr ""
+msgstr "这会向每个参考文献添加一个标题。"
 
 #: ../../usage.rst:957
 msgid "Suppressing Warnings"
-msgstr ""
+msgstr "抑制警告"
 
 #: ../../usage.rst:961
 msgid ""
 "To suppress *all* warnings from ``sphinxcontrib-bibtex`` (which is "
 "probably a bad idea!), add this to your ``conf.py``:"
 msgstr ""
+"抑制来自 ``sphinxcontrib-bibtex`` 的所有警告（这可能不是一个好主意！），在您的 ``conf.py`` 中添加如下内容："
 
 #: ../../usage.rst:968
 msgid ""
 "To suppress only a subset of warnings, such as duplicate label warnings, "
 "you can use:"
 msgstr ""
+"要抑制子集警告（例如重复标签警告），您可以使用："
 
 #: ../../usage.rst:975
 msgid "The complete list of warning subtypes that can be suppressed is::"
-msgstr ""
+msgstr "完整的警告子类型列表："
 
 #: ../../usage.rst:989
 msgid "Known Issues and Workarounds"
-msgstr ""
+msgstr "已知问题和解决方法"
 
 #: ../../usage.rst:992
 msgid "LaTeX Formatting Inside Bibtex Entries"
-msgstr ""
+msgstr "LaTeX 格式在 Bibtex 条目内"
 
 #: ../../usage.rst:994
 msgid ""
@@ -894,10 +1009,12 @@ msgid ""
 "to parse and format bibtex entries, that limitation is carried over to "
 "sphinxcontrib-bibtex."
 msgstr ""
+"除了简单的 unicode/LaTeX 符号转换，pybtex 不支持在 bib 文件中使用 LaTeX 格式。"
+"由于 sphinxcontrib-bibtex 使用 pybtex 解析和格式化 bibtex 条目，因此该限制也传递给了 sphinxcontrib-bibtex。"
 
 #: ../../usage.rst:1000
 msgid "Encoding: Percent Signs"
-msgstr ""
+msgstr "编码：百分号"
 
 #: ../../usage.rst:1002
 msgid ""
@@ -905,10 +1022,11 @@ msgid ""
 " (unless your file contains a genuine comment), otherwise the pybtex "
 "parser will ignore the remainder of the line."
 msgstr ""
+"确保在您的 bib 文件中始终使用 ``\\%`` 表示百分号（除非文件包含真正的注释），否则 pybtex 解析器将忽略该行其余部分。"
 
 #: ../../usage.rst:1008
 msgid "Duplicate Labels When Using ``:style: plain``"
-msgstr ""
+msgstr "使用 ``:style: plain`` 时的重复标签"
 
 #: ../../usage.rst:1010
 msgid ""
@@ -918,22 +1036,24 @@ msgid ""
 "are bound to get duplicate labels for entries. There are a few ways to "
 "work around this problem:"
 msgstr ""
+"使用 ``:style: plain`` 时，标签是数字，每个 :rst:dir:`bibliography` 指令从 `[1]` 重新开始。"
+"因此，当插入多个 ``:style: plain`` 的 :rst:dir:`bibliography` 指令时，您将不可避免地得到重复的条目标签。有几种方法可以解决这个问题："
 
 #: ../../usage.rst:1017
 msgid "Use a single bibliography directive for all your references."
-msgstr ""
+msgstr "使用单个 bibliography 指令来包含所有引用。"
 
 #: ../../usage.rst:1019
 msgid "Use the ``labelprefix`` option, as documented above."
-msgstr ""
+msgstr "使用 ``labelprefix`` 选项，如上文所述。"
 
 #: ../../usage.rst:1021
 msgid "Use a style that has non-numeric labelling, such as ``:style: alpha``."
-msgstr ""
+msgstr "使用具有非数字标签的样式，例如 ``:style: alpha``。"
 
 #: ../../usage.rst:1025
 msgid "LaTeX Backend Fails with Citations In Figure Captions"
-msgstr ""
+msgstr "LaTeX 后端在图形标题中处理引用时失败。"
 
 #: ../../usage.rst:1027
 msgid ""
@@ -941,6 +1061,7 @@ msgid ""
 "LaTeX does not support these in figure captions. You can work around this"
 " problem by adding the following code to your ``conf.py``:"
 msgstr ""
+"Sphinx 为引用生成 ``\\phantomsection`` 命令，然而 LaTeX 不支持在图形标题中处理这些命令。您可以通过在您的 ``conf.py`` 中添加以下代码来解决这个问题："
 
 #: ../../usage.rst:1044
 msgid ""
@@ -948,10 +1069,11 @@ msgid ""
 "solution, please report at https://github.com/mcmtroffaes/sphinxcontrib-"
 "bibtex/issues/276"
 msgstr ""
+"上述解决方法不再有效。如果您知道解决方案，请在 https://github.com/mcmtroffaes/sphinxcontrib-bibtex/issues/276 报告。"
 
 #: ../../usage.rst:1049
 msgid "Mismatch Between Output of HTML/Text and LaTeX Backends"
-msgstr ""
+msgstr "HTML/文本输出和 LaTeX 后端之间的不匹配。"
 
 #: ../../usage.rst:1051
 msgid ""
@@ -961,6 +1083,9 @@ msgid ""
 "issue will occur also if you use regular citations in Sphinx: it has "
 "nothing to do with sphinxcontrib-bibtex per se."
 msgstr ""
+"Sphinx 的 LaTeX 编写器目前会将所有引用收集在一起，并将它们放在单独的页面上，"
+"每个页面上有一个单独的标题，而 HTML 和文本编写器将引用放在它们定义的位置。"
+"如果您在 Sphinx 中使用常规引用，这也会发生在 sphinxcontrib-bibtex 本身：它与 sphinxcontrib-bibtex 无关。"
 
 #: ../../usage.rst:1058
 msgid ""
@@ -968,12 +1093,15 @@ msgid ""
 "suppress its custom bibliography transform by adding the following code "
 "to your ``conf.py``:"
 msgstr ""
+"要在两个输出之间获得更接近的匹配，请告诉 Sphinx 抑制其自定义参考文献转换，"
+"在您的 ``conf.py`` 中添加以下代码："
 
 #: ../../usage.rst:1072
 msgid ""
 "Then create a :file:`references.rst` file that you include at the end of "
 "your toctree, containing the following code:"
 msgstr ""
+"然后创建 :file:`references.rst` 文件，并将其包含在您的 toctree 末尾，内容如下："
 
 #: ../../usage.rst:1096
 msgid ""
@@ -981,10 +1109,12 @@ msgid ""
 "might find other workarounds if the above one does not work for your use "
 "case: https://github.com/sphinx-doc/sphinx/issues/4775"
 msgstr ""
+"此问题正在Sphinx的bug跟踪器上进行追踪，您可以在以下链接中找到相关信息。如果上述解决方案不适用于您的情况，"
+"您或许还能在那里发现其他变通方法：https://github.com/sphinx-doc/sphinx/issues/4775"
 
 #: ../../usage.rst:1102
 msgid "Citation References Not Rendered In TocTree Directives"
-msgstr ""
+msgstr "在 toctree 指令中，引用未被渲染。"
 
 #: ../../usage.rst:1104
 msgid ""
@@ -992,16 +1122,18 @@ msgid ""
 "directive will simply take the target of the reference for rendering in "
 "the table of contents, rather than the fully rendered reference."
 msgstr ""
+"当文档标题中包含引用时，toctree 指令将简单地将引用的目标用于渲染目录，而不是完全渲染的引用。"
 
 #: ../../usage.rst:1109
 msgid ""
 "This appears to be a limitation of the toctree directive. No workaround "
 "is currently known."
 msgstr ""
+"这似乎是 toctree 指令的限制。目前还没有已知的解决方法。"
 
 #: ../../usage.rst:1113
 msgid "Unknown Target Name When Using Footnote Citations With Numpydoc"
-msgstr ""
+msgstr "使用 Numpydoc 时，在脚注引用中使用未知的目标名称。"
 
 #: ../../usage.rst:1115
 msgid ""
@@ -1015,10 +1147,13 @@ msgid ""
 "``False`` in your ``conf.py`` file. This will cause numpydoc not to "
 "duplicate the short descriptions for class members."
 msgstr ""
+"Numpydoc 有时会重复一些 Python 对象（例如成员函数）的简短描述（即 docstring 的第一行）。"
+"如果发生这种情况，解决方法是不在 docstring 的第一行中包含脚注引用。"
+"相反，请将它们放在长描述中。或者，在您的 ``conf.py`` 文件中设置 ``numpydoc_class_members_toctree`` 为 ``False``。这将导致 numpydoc 不重复类成员的简短描述。"
 
 #: ../../usage.rst:1128
 msgid "Import errors when running pytest"
-msgstr ""
+msgstr "当运行 pytest 时出现导入错误"
 
 #: ../../usage.rst:1130
 msgid ""
@@ -1027,4 +1162,4 @@ msgid ""
 "package. To run the tests, please do as follows (ideally, in a virtual "
 "environment):"
 msgstr ""
-
+"测试套件依赖于安装的入口点，因此 sphinxcontrib-bibtex 在没有首先安装包的情况下无法进行测试。要运行测试，请按照以下步骤操作（最好在虚拟环境中）："
